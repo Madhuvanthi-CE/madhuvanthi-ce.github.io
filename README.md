@@ -1,2 +1,2 @@
 # madhuvanthi-ce.github.io
- I am a diploma student in Computer Engineering &amp; IoT with strong interest in     software development, IoT systems, and AI-based applications. I focus on     building practical, real-time projects.
+I am a second-year B.Tech Artificial Intelligence and Data Science student with a strong interest in software development, AI applications, and backend development. I enjoy building practical, real-world projects using Python, IoT, databases, and modern development tools while continuously expanding my skills in AI and software engineering.
