@@ -160,57 +160,150 @@
 
 <!-- PROJECTS -->
 <section class="card slide-up" id="projects">
-  <h2>Projects</h2>
+  <h2>🚀 Projects</h2>
 
+  <!-- PROJECT 1 -->
   <div class="project">
-    <h3>Energixion – Renewable Energy IoT</h3>
-    <p>Smart energy harvesting using solar, wind & piezoelectric sources.</p>
-    <a href="https://github.com/Rockymadhu/energixion-project" target="_blank">
+    <h3>⚡ Energixion – Renewable Energy IoT</h3>
+
+    <p>
+      Smart energy harvesting using solar, wind & piezoelectric sources.
+    </p>
+
+    <button class="project-btn" onclick="openPdf('energixion-output.pdf')">
+      <i class="fa-solid fa-file-pdf"></i> Output
+    </button>
+  </div>
+
+
+  <!-- PROJECT 2 -->
+  <div class="project">
+    <h3>🤖 AI Alert System</h3>
+
+    <p>
+      AI-based human detection system with alerts using OpenCV and YOLO.
+    </p>
+
+    <button class="project-btn" onclick="openPdf('ai-alert-output.pdf')">
+      <i class="fa-solid fa-file-pdf"></i> Output
+    </button>
+  </div>
+
+
+  <!-- PROJECT 3 -->
+  <div class="project">
+    <h3>💰 Personal Finance App</h3>
+
+    <p>
+      Flutter app to track income & expenses with multi-user support.
+    </p>
+
+    <button class="project-btn" onclick="openPhases()">
+      <i class="fa-solid fa-images"></i> Output
+    </button>
+
+    <a class="project-btn"
+       href="app-release.apk"
+       download
+       onclick="downloadAPK()">
+      <i class="fa-solid fa-download"></i> Download APK
+    </a>
+  </div>
+
+
+  <!-- PROJECT 4 -->
+  <div class="project">
+    <h3>🧠 LLM-Based Project Development Chatbot</h3>
+
+    <p>
+      AI-powered chatbot built using FastAPI, Groq LLM, and MongoDB.
+      Deployed on Render for live API access.
+    </p>
+
+    <a class="project-btn"
+       href="https://github.com/Rockymadhu/project-development_chatbot"
+       target="_blank">
+      <i class="fab fa-github"></i> View on GitHub
+    </a>
+
+    <a class="project-btn"
+       href="https://project-development-chatbot.onrender.com/docs"
+       target="_blank">
+      <i class="fa-solid fa-globe"></i> Live Demo
+    </a>
+  </div>
+
+
+  <!-- PROJECT 5 -->
+  <div class="project">
+    <h3>🧪 OrangeHRM Test Automation (Selenium)</h3>
+
+    <p>
+      Built an automation testing framework using Selenium WebDriver for
+      OrangeHRM. Implemented login testing, element interaction, waits,
+      and test case execution.
+    </p>
+
+    <a class="project-btn"
+       href="https://github.com/Rockymadhu/OrangeHRM-Selenium-Automation"
+       target="_blank">
       <i class="fab fa-github"></i> View on GitHub
     </a>
   </div>
 
-  <div class="project">
-    <h3>AI Alert System</h3>
-    <p>AI-based human detection system with alerts using OpenCV and YOLO.</p>
-    <a href="https://github.com/Rockymadhu/Ai-alert-system" target="_blank">
-      <i class="fab fa-github"></i> View on GitHub
-    </a>
-  </div>
-
-  <div class="project">
-    <h3>Personal Finance App</h3>
-    <p>Flutter app to track income & expenses with multi-user support.</p>
-    <a href="https://github.com/Rockymadhu/personal-finance-app" target="_blank">
-      <i class="fab fa-github"></i> View on GitHub
-    </a>
-  </div>
-  <div class="project">
-  <h3>LLM-Based Project Development Chatbot</h3>
-  <p>
-    AI-powered chatbot built using FastAPI, Groq LLM, and MongoDB.
-    Deployed on Render for live API access.
-  </p>
-  <a href="https://github.com/Rockymadhu/project-development_chatbot" target="_blank">
-  <i class="fab fa-github"></i> View on GitHub
-</a>
-
-<a href="https://project-development-chatbot.onrender.com/docs" target="_blank">
-  <i class="fa-solid fa-globe"></i> Live Demo
-</a>
-
-</div>
-  <div class="project">
-  <h3>OrangeHRM Test Automation (Selenium)</h3>
-  <p>
-    Built an automation testing framework using Selenium WebDriver for OrangeHRM.
-    Implemented login testing, element interaction, waits, and test case execution.
-  </p>
-  <a href="https://github.com/Rockymadhu/OrangeHRM-Selenium-Automation" target="_blank">
-    <i class="fab fa-github"></i> View on GitHub
-  </a>
-</div>
 </section>
+
+  <!-- PDF POPUP -->
+<div id="pdfModal" class="project-modal">
+
+  <div class="project-modal-container">
+
+    <button class="modal-close" onclick="closePdf()">
+      &times;
+    </button>
+
+    <iframe id="pdfViewer" src="" title="Project Output"></iframe>
+
+  </div>
+
+</div>
+
+  <!-- PHASE OUTPUT POPUP -->
+<div id="phaseModal" class="project-modal">
+
+  <div class="phase-container">
+
+    <button class="modal-close" onclick="closePhases()">
+      &times;
+    </button>
+
+    <h2 id="phaseTitle">Personal Finance App - Phase 1</h2>
+
+    <img id="phaseImage" src="" alt="Project Phase">
+
+    <div class="phase-controls">
+
+      <button id="previousBtn" onclick="previousPhase()">
+        <i class="fa-solid fa-arrow-left"></i> Previous
+      </button>
+
+      <span id="phaseNumber">1 / 7</span>
+
+      <button id="nextBtn" onclick="nextPhase()">
+        Next <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <!-- DOWNLOAD SUCCESS MESSAGE -->
+<div id="downloadMessage" class="download-message">
+  <i class="fa-solid fa-circle-check"></i>
+  APK downloaded successfully!
+</div>
 
 <!-- INTERNSHIP -->
 <section class="card slide-up">
