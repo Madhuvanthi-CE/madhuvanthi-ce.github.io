@@ -13,10 +13,12 @@
   function openResume(event) {
     event.preventDefault();
 
-    document.getElementById("resumeModal").style.display = "flex";
+    const modal = document.getElementById("resumeModal");
+    modal.style.display = "flex";
   }
 
   function closeResume() {
-    document.getElementById("resumeModal").style.display = "none";
+    const modal = document.getElementById("resumeModal");
+    modal.style.display = "none";
   }
 </script>
