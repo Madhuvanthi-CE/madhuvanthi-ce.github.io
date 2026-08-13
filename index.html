@@ -378,7 +378,11 @@
   </div>
 </section>
 <script>
-  // Mobile Menu
+
+  // =========================
+  // MOBILE MENU
+  // =========================
+
   const toggle = document.getElementById("menu-toggle");
   const nav = document.getElementById("nav-links");
 
@@ -388,18 +392,145 @@
   });
 
 
-  // Resume Popup
-  function openResume(event) {
-    event.preventDefault();
+  // =========================
+  // PDF POPUP
+  // =========================
 
-    const modal = document.getElementById("resumeModal");
+  function openPdf(pdfFile) {
+
+    const modal = document.getElementById("pdfModal");
+    const viewer = document.getElementById("pdfViewer");
+
+    viewer.src = pdfFile;
+
     modal.style.display = "flex";
   }
 
-  function closeResume() {
-    const modal = document.getElementById("resumeModal");
+
+  function closePdf() {
+
+    const modal = document.getElementById("pdfModal");
+    const viewer = document.getElementById("pdfViewer");
+
     modal.style.display = "none";
+
+    viewer.src = "";
   }
+
+
+  // =========================
+  // PHASE IMAGES
+  // =========================
+
+  let currentPhase = 1;
+
+  const totalPhases = 7;
+
+
+  function openPhases() {
+
+    currentPhase = 1;
+
+    showPhase();
+
+    document.getElementById("phaseModal").style.display = "flex";
+  }
+
+
+  function showPhase() {
+
+    const image = document.getElementById("phaseImage");
+    const title = document.getElementById("phaseTitle");
+    const number = document.getElementById("phaseNumber");
+
+    const previousBtn = document.getElementById("previousBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+
+    image.src = `PHASE ${currentPhase}.png`;
+
+    title.textContent =
+      `Personal Finance App - Phase ${currentPhase}`;
+
+    number.textContent =
+      `${currentPhase} / ${totalPhases}`;
+
+
+    previousBtn.disabled =
+      currentPhase === 1;
+
+    nextBtn.disabled =
+      currentPhase === totalPhases;
+  }
+
+
+  function nextPhase() {
+
+    if (currentPhase < totalPhases) {
+
+      currentPhase++;
+
+      showPhase();
+    }
+  }
+
+
+  function previousPhase() {
+
+    if (currentPhase > 1) {
+
+      currentPhase--;
+
+      showPhase();
+    }
+  }
+
+
+  function closePhases() {
+
+    document.getElementById("phaseModal").style.display = "none";
+  }
+
+
+  // =========================
+  // APK DOWNLOAD
+  // =========================
+
+  function downloadAPK() {
+
+    setTimeout(() => {
+
+      const message =
+        document.getElementById("downloadMessage");
+
+      message.style.display = "block";
+
+
+      setTimeout(() => {
+
+        message.style.display = "none";
+
+      }, 3000);
+
+    }, 500);
+  }
+
+
+  // =========================
+  // ESC KEY
+  // =========================
+
+  document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+      closePdf();
+
+      closePhases();
+    }
+
+  });
+
 </script>
 
 <!-- FOOTER -->
