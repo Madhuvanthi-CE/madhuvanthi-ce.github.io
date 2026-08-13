@@ -412,6 +412,323 @@ footer {
   z-index: 10;
 }
 
+/* =========================
+   PROJECT BUTTONS
+========================= */
+
+.project-btn {
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 12px;
+  padding: 10px 20px;
+
+  border: 1px solid rgba(155, 92, 255, 0.5);
+  border-radius: 25px;
+
+  background: rgba(155, 92, 255, 0.15);
+  color: #9b5cff;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #9b5cff;
+  color: #000;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 6px 18px rgba(155, 92, 255, 0.35);
+}
+
+
+/* =========================
+   PROJECT POPUP
+========================= */
+
+.project-modal {
+  display: none;
+
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.88);
+
+  z-index: 10000;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* =========================
+   PDF CONTAINER
+========================= */
+
+.project-modal-container {
+  position: relative;
+
+  width: 85%;
+  height: 90%;
+
+  background: #111;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 40px rgba(155, 92, 255, 0.3);
+}
+
+
+/* PDF */
+
+.project-modal-container iframe {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.modal-close {
+  position: absolute;
+
+  top: 10px;
+  right: 15px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #000;
+  color: white;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  z-index: 10001;
+
+  transition: 0.3s;
+}
+
+.modal-close:hover {
+  background: #ff3333;
+  transform: rotate(90deg);
+}
+
+
+/* =========================
+   PHASE CONTAINER
+========================= */
+
+.phase-container {
+  position: relative;
+
+  width: 90%;
+  height: 90%;
+
+  background: #111;
+
+  border-radius: 15px;
+
+  padding: 35px 25px 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  box-shadow:
+    0 0 40px rgba(155, 92, 255, 0.3);
+}
+
+.phase-container h2 {
+  color: #9b5cff;
+
+  margin-bottom: 15px;
+
+  text-align: center;
+}
+
+
+/* Phase Image */
+
+#phaseImage {
+  max-width: 90%;
+  max-height: 75%;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 0 20px rgba(155, 92, 255, 0.2);
+}
+
+
+/* =========================
+   PHASE CONTROLS
+========================= */
+
+.phase-controls {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+  margin-top: 20px;
+}
+
+.phase-controls button {
+  padding: 10px 20px;
+
+  border: 1px solid rgba(155, 92, 255, 0.5);
+
+  border-radius: 25px;
+
+  background: rgba(155, 92, 255, 0.15);
+
+  color: #9b5cff;
+
+  font-family: 'Poppins', sans-serif;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.phase-controls button:hover {
+  background: #9b5cff;
+  color: #000;
+}
+
+.phase-controls button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#phaseNumber {
+  color: white;
+  font-weight: 600;
+}
+
+
+/* =========================
+   DOWNLOAD SUCCESS
+========================= */
+
+.download-message {
+  position: fixed;
+
+  bottom: 30px;
+  right: 30px;
+
+  background: #1f1f1f;
+
+  color: #fff;
+
+  padding: 15px 22px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(155, 92, 255, 0.5);
+
+  box-shadow:
+    0 5px 25px rgba(0, 0, 0, 0.4);
+
+  font-size: 15px;
+
+  z-index: 11000;
+
+  display: none;
+
+  animation: messageSlide 0.4s ease;
+}
+
+.download-message i {
+  color: #6cff8d;
+  margin-right: 8px;
+}
+
+@keyframes messageSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .project-modal-container {
+    width: 95%;
+    height: 85%;
+  }
+
+  .phase-container {
+    width: 95%;
+    height: 85%;
+    padding: 35px 10px 15px;
+  }
+
+  .phase-container h2 {
+    font-size: 18px;
+  }
+
+  #phaseImage {
+    max-width: 100%;
+    max-height: 70%;
+  }
+
+  .phase-controls {
+    gap: 10px;
+  }
+
+  .phase-controls button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .download-message {
+    right: 15px;
+    left: 15px;
+    bottom: 20px;
+    text-align: center;
+  }
+}
+
 .close-resume:hover {
   background: #ff3333;
 }
