@@ -41,12 +41,30 @@
   <p class="fade-in delay">Engineering solutions for tomorrow's challenges.</p>
 
   <a class="resume-btn fade-in delay2"
-     href="https://github.com/Rockymadhu/resume"
-     target="_blank">
+     href="#"
+     onclick="openResume(event)">
     <i class="fa-solid fa-file-pdf"></i> View Resume
   </a>
 </header>
 
+
+<!-- RESUME POPUP -->
+<div id="resumeModal" class="resume-modal">
+  <div class="resume-container">
+
+    <!-- Close Button -->
+    <button class="close-resume" onclick="closeResume()">
+      &times;
+    </button>
+
+    <!-- Resume PDF -->
+    <iframe
+      src="resume.pdf"
+      title="Resume">
+    </iframe>
+
+  </div>
+</div>
 <!-- INTRO -->
 <section class="card slide-up">
   <h2>Introduction</h2>
