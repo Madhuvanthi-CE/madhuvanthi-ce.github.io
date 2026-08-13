@@ -41,31 +41,19 @@
   <h1 class="fade-in">B.Tech Artificial Intelligence & Data Science</h1>
   <p class="fade-in delay">Engineering solutions for tomorrow's challenges.</p>
 
-  <a class="resume-btn fade-in delay2"
-     href="#"
-     onclick="openResume(event)">
-    <i class="fa-solid fa-file-pdf"></i> View Resume
-  </a>
+ <a
+  class="resume-btn fade-in delay2"
+  href="#"
+  onclick="openResume(event)">
+
+  <i class="fa-solid fa-file-pdf"></i>
+  View Resume
+
+</a>
 </header>
 
 
-<!-- RESUME POPUP -->
-<div id="resumeModal" class="resume-modal">
 
-  <div class="resume-container">
-
-    <button class="close-resume" onclick="closeResume()">
-      &times;
-    </button>
-
-    <iframe
-      src="resume.pdf"
-      title="Resume">
-    </iframe>
-
-  </div>
-
-</div>
 
     <!-- Close Button -->
     <button class="close-resume" onclick="closeResume()">
@@ -394,196 +382,224 @@
 </section>
 <script>
 
-  // =========================
-  // MOBILE MENU
-  // =========================
+/* =========================
+   MOBILE MENU
+========================= */
 
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+
+if (toggle && nav) {
 
   toggle.addEventListener("click", () => {
+
     nav.classList.toggle("active");
     toggle.classList.toggle("open");
+
   });
 
+}
 
-  // =========================
-  // RESUME / PDF POPUP
-  // =========================
 
-  function openResume(event) {
+/* =========================
+   RESUME
+========================= */
 
-    event.preventDefault();
+function openResume(event) {
 
-    const modal = document.getElementById("resumeModal");
+  event.preventDefault();
 
-    modal.style.display = "flex";
+  const modal = document.getElementById("resumeModal");
 
-    // Stop background page scrolling
-    document.body.style.overflow = "hidden";
+  if (!modal) {
+    console.error("resumeModal not found");
+    return;
   }
 
+  modal.style.display = "flex";
 
-  function closeResume() {
-
-    const modal = document.getElementById("resumeModal");
-
-    modal.style.display = "none";
-
-    // Allow background scrolling again
-    document.body.style.overflow = "auto";
-  }
+  document.body.style.overflow = "hidden";
+}
 
 
-  // =========================
-  // PROJECT PDF POPUP
-  // =========================
+function closeResume() {
 
-  function openPdf(pdfFile) {
+  const modal = document.getElementById("resumeModal");
 
-    const modal = document.getElementById("pdfModal");
-    const viewer = document.getElementById("pdfViewer");
+  if (!modal) return;
 
-    viewer.src = pdfFile;
+  modal.style.display = "none";
 
-    modal.style.display = "flex";
-
-    document.body.style.overflow = "hidden";
-  }
+  document.body.style.overflow = "";
+}
 
 
-  function closePdf() {
+/* =========================
+   PROJECT PDF
+========================= */
 
-    const modal = document.getElementById("pdfModal");
-    const viewer = document.getElementById("pdfViewer");
+function openPdf(pdfFile) {
 
-    modal.style.display = "none";
+  const modal = document.getElementById("pdfModal");
+  const viewer = document.getElementById("pdfViewer");
 
-    viewer.src = "";
+  if (!modal || !viewer) return;
 
-    document.body.style.overflow = "auto";
-  }
+  viewer.src = pdfFile;
 
+  modal.style.display = "flex";
 
-  // =========================
-  // PHASE IMAGES
-  // =========================
-
-  let currentPhase = 1;
-
-  const totalPhases = 7;
+  document.body.style.overflow = "hidden";
+}
 
 
-  function openPhases() {
+function closePdf() {
 
-    currentPhase = 1;
+  const modal = document.getElementById("pdfModal");
+  const viewer = document.getElementById("pdfViewer");
 
-    showPhase();
+  if (!modal || !viewer) return;
 
-    document.getElementById("phaseModal").style.display = "flex";
+  modal.style.display = "none";
 
-    document.body.style.overflow = "hidden";
-  }
+  viewer.src = "";
 
-
-  function showPhase() {
-
-    const image = document.getElementById("phaseImage");
-    const title = document.getElementById("phaseTitle");
-    const number = document.getElementById("phaseNumber");
-
-    const previousBtn = document.getElementById("previousBtn");
-    const nextBtn = document.getElementById("nextBtn");
+  document.body.style.overflow = "";
+}
 
 
-    image.src = `PHASE ${currentPhase}.png`;
+/* =========================
+   PHASES
+========================= */
 
+let currentPhase = 1;
+
+const totalPhases = 7;
+
+
+function openPhases() {
+
+  currentPhase = 1;
+
+  showPhase();
+
+  const modal = document.getElementById("phaseModal");
+
+  if (!modal) return;
+
+  modal.style.display = "flex";
+
+  document.body.style.overflow = "hidden";
+}
+
+
+function showPhase() {
+
+  const image = document.getElementById("phaseImage");
+  const title = document.getElementById("phaseTitle");
+  const number = document.getElementById("phaseNumber");
+
+  const previousBtn = document.getElementById("previousBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  if (!image) return;
+
+  image.src = `PHASE ${currentPhase}.png`;
+
+  if (title) {
     title.textContent =
       `Personal Finance App - Phase ${currentPhase}`;
+  }
 
+  if (number) {
     number.textContent =
       `${currentPhase} / ${totalPhases}`;
+  }
 
-
+  if (previousBtn) {
     previousBtn.disabled =
       currentPhase === 1;
+  }
 
+  if (nextBtn) {
     nextBtn.disabled =
       currentPhase === totalPhases;
   }
+}
 
 
-  function nextPhase() {
+function nextPhase() {
 
-    if (currentPhase < totalPhases) {
+  if (currentPhase < totalPhases) {
 
-      currentPhase++;
+    currentPhase++;
 
-      showPhase();
-    }
+    showPhase();
+
+  }
+}
+
+
+function previousPhase() {
+
+  if (currentPhase > 1) {
+
+    currentPhase--;
+
+    showPhase();
+
+  }
+}
+
+
+function closePhases() {
+
+  const modal = document.getElementById("phaseModal");
+
+  if (!modal) return;
+
+  modal.style.display = "none";
+
+  document.body.style.overflow = "";
+}
+
+
+/* =========================
+   APK
+========================= */
+
+function downloadAPK() {
+
+  const message =
+    document.getElementById("downloadMessage");
+
+  if (!message) return;
+
+  message.style.display = "block";
+
+  setTimeout(() => {
+
+    message.style.display = "none";
+
+  }, 3000);
+}
+
+
+/* =========================
+   ESC
+========================= */
+
+document.addEventListener("keydown", function(event) {
+
+  if (event.key === "Escape") {
+
+    closeResume();
+    closePdf();
+    closePhases();
+
   }
 
-
-  function previousPhase() {
-
-    if (currentPhase > 1) {
-
-      currentPhase--;
-
-      showPhase();
-    }
-  }
-
-
-  function closePhases() {
-
-    document.getElementById("phaseModal").style.display = "none";
-
-    document.body.style.overflow = "auto";
-  }
-
-
-  // =========================
-  // APK DOWNLOAD
-  // =========================
-
-  function downloadAPK() {
-
-    setTimeout(() => {
-
-      const message =
-        document.getElementById("downloadMessage");
-
-      message.style.display = "block";
-
-
-      setTimeout(() => {
-
-        message.style.display = "none";
-
-      }, 3000);
-
-    }, 500);
-  }
-
-
-  // =========================
-  // ESC KEY
-  // =========================
-
-  document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-
-      closeResume();
-
-      closePdf();
-
-      closePhases();
-
-    }
-
-  });
+});
 
 </script>
 
