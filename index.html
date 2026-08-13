@@ -50,7 +50,21 @@
 
 <!-- RESUME POPUP -->
 <div id="resumeModal" class="resume-modal">
+
   <div class="resume-container">
+
+    <button class="close-resume" onclick="closeResume()">
+      &times;
+    </button>
+
+    <iframe
+      src="resume.pdf"
+      title="Resume">
+    </iframe>
+
+  </div>
+
+</div>
 
     <!-- Close Button -->
     <button class="close-resume" onclick="closeResume()">
@@ -393,7 +407,35 @@
 
 
   // =========================
-  // PDF POPUP
+  // RESUME / PDF POPUP
+  // =========================
+
+  function openResume(event) {
+
+    event.preventDefault();
+
+    const modal = document.getElementById("resumeModal");
+
+    modal.style.display = "flex";
+
+    // Stop background page scrolling
+    document.body.style.overflow = "hidden";
+  }
+
+
+  function closeResume() {
+
+    const modal = document.getElementById("resumeModal");
+
+    modal.style.display = "none";
+
+    // Allow background scrolling again
+    document.body.style.overflow = "auto";
+  }
+
+
+  // =========================
+  // PROJECT PDF POPUP
   // =========================
 
   function openPdf(pdfFile) {
@@ -404,6 +446,8 @@
     viewer.src = pdfFile;
 
     modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
   }
 
 
@@ -415,6 +459,8 @@
     modal.style.display = "none";
 
     viewer.src = "";
+
+    document.body.style.overflow = "auto";
   }
 
 
@@ -434,6 +480,8 @@
     showPhase();
 
     document.getElementById("phaseModal").style.display = "flex";
+
+    document.body.style.overflow = "hidden";
   }
 
 
@@ -489,6 +537,8 @@
   function closePhases() {
 
     document.getElementById("phaseModal").style.display = "none";
+
+    document.body.style.overflow = "auto";
   }
 
 
@@ -524,9 +574,12 @@
 
     if (event.key === "Escape") {
 
+      closeResume();
+
       closePdf();
 
       closePhases();
+
     }
 
   });
