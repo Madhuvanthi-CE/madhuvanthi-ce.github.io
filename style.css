@@ -610,63 +610,6 @@ footer {
 }
 
 
-/* =====================================================
-   RESUME POPUP
-===================================================== */
-
-.resume-modal {
-  display: none;
-
-  position: fixed;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background:
-    rgba(0, 0, 0, 0.90);
-
-  z-index: 9999;
-
-  justify-content: center;
-  align-items: center;
-
-  padding: 25px;
-}
-
-.resume-container {
-  position: relative;
-
-  width: min(
-    1000px,
-    95vw
-  );
-
-  height: 92vh;
-
-  background: #fff;
-
-  border-radius: 12px;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 0 40px
-      rgba(
-        155,
-        92,
-        255,
-        0.35
-      );
-}
-
-.resume-container iframe {
-  width: 100%;
-  height: 100%;
-
-  border: none;
-}
 
 
 /* =====================================================
@@ -1386,4 +1329,527 @@ footer {
     font-size: 11px;
   }
 
+}
+/* =====================================================
+   RESPONSIVE WEBSITE
+===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* =========================
+   DESKTOP WEBSITE
+========================= */
+
+@media (min-width: 769px) {
+
+  .navbar {
+    height: 70px;
+    padding: 0 4%;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.7rem;
+  }
+
+  .hero {
+    min-height: 600px;
+    padding: 180px 5% 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    max-width: 1300px;
+    margin: auto;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    margin-top: 15px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 45px;
+  }
+
+  .project {
+    margin-bottom: 25px;
+  }
+
+  .skills {
+    gap: 12px;
+  }
+}
+
+
+/* =========================
+   MOBILE WEBSITE
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 65px;
+    padding: 0 20px;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 65px;
+    right: 15px;
+
+    width: 200px;
+
+    background: rgba(20, 20, 20, 0.98);
+    backdrop-filter: blur(15px);
+
+    flex-direction: column;
+    gap: 18px;
+
+    padding: 22px;
+
+    border-radius: 15px;
+
+    display: none;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 130px 20px 80px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    margin-top: 15px;
+  }
+
+  .resume-btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    width: calc(100% - 30px);
+    margin: 35px auto;
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+
+  .card h2 {
+    font-size: 1.6rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .skills {
+    gap: 8px;
+  }
+
+  .skills span {
+    padding: 8px 13px;
+    font-size: 0.8rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-links a {
+    text-align: center;
+  }
+
+  .project a {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* =====================================================
+   RESUME / PDF POPUP
+===================================================== */
+
+.resume-modal {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(5px);
+
+  z-index: 99999;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* DESKTOP PDF BOX */
+
+.resume-container {
+  position: relative;
+
+  width: min(1200px, 92vw);
+  height: min(900px, 92vh);
+
+  background: #ffffff;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 30px rgba(155, 92, 255, 0.5),
+    0 0 70px rgba(155, 92, 255, 0.25);
+}
+
+/* PDF */
+
+.resume-container iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+
+  background: white;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-resume {
+  position: absolute;
+
+  top: 12px;
+  right: 15px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #000;
+  color: white;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  z-index: 100000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+
+.close-resume:hover {
+  background: #ff3333;
+  transform: scale(1.08);
+}
+
+
+/* =====================================================
+   OUTPUT POPUP
+===================================================== */
+
+.output-modal {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.90);
+  backdrop-filter: blur(6px);
+
+  z-index: 99999;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+
+/* OUTPUT WINDOW */
+
+.output-container {
+  position: relative;
+
+  width: min(1200px, 92vw);
+  height: min(850px, 90vh);
+
+  background: #151515;
+
+  border: 1px solid rgba(155, 92, 255, 0.4);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 35px rgba(155, 92, 255, 0.45),
+    0 0 80px rgba(155, 92, 255, 0.2);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* OUTPUT IMAGE */
+
+.output-content {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px 30px 70px;
+
+  overflow: hidden;
+}
+
+.output-content img {
+  max-width: 100%;
+  max-height: 100%;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: 8px;
+
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* OUTPUT CLOSE BUTTON */
+
+.close-output {
+  position: absolute;
+
+  top: 12px;
+  right: 15px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #000;
+  color: white;
+
+  font-size: 27px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+.close-output:hover {
+  background: #ff3333;
+}
+
+
+/* NEXT / PREVIOUS */
+
+.output-controls {
+  position: absolute;
+
+  bottom: 15px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+
+  z-index: 10;
+}
+
+.output-controls button {
+  border: none;
+
+  padding: 10px 22px;
+
+  border-radius: 25px;
+
+  background: #9b5cff;
+  color: #000;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.output-controls button:hover {
+  background: #c77dff;
+  transform: translateY(-2px);
+}
+
+.output-counter {
+  color: white;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   MOBILE PDF / OUTPUT POPUP
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .resume-modal,
+  .output-modal {
+    padding: 10px;
+  }
+
+  .resume-container {
+    width: 96vw;
+    height: 92vh;
+
+    border-radius: 12px;
+  }
+
+  .close-resume {
+    width: 40px;
+    height: 40px;
+
+    top: 8px;
+    right: 8px;
+
+    font-size: 24px;
+  }
+
+
+  /* OUTPUT MOBILE */
+
+  .output-container {
+    width: 96vw;
+    height: 88vh;
+
+    border-radius: 14px;
+  }
+
+  .output-content {
+    padding: 55px 10px 65px;
+  }
+
+  .output-content img {
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+  }
+
+  .close-output {
+    width: 40px;
+    height: 40px;
+
+    top: 8px;
+    right: 8px;
+
+    font-size: 24px;
+  }
+
+  .output-controls {
+    bottom: 10px;
+    gap: 8px;
+  }
+
+  .output-controls button {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  .output-counter {
+    font-size: 12px;
+  }
+}
+
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 400px) {
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .card {
+    width: calc(100% - 20px);
+    padding: 20px 15px;
+  }
+
+  .output-container {
+    width: 97vw;
+    height: 86vh;
+  }
+
+  .output-content {
+    padding: 50px 5px 60px;
+  }
+
+  .output-controls button {
+    padding: 7px 12px;
+  }
 }
