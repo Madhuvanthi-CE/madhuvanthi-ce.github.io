@@ -1501,50 +1501,47 @@ body {
 
 
 /* =====================================================
-   RESUME / PDF POPUP
+   RESUME POPUP - DESKTOP + MOBILE
 ===================================================== */
 
+/* Dark background overlay */
 .resume-modal {
   display: none;
-
   position: fixed;
   inset: 0;
-
-  width: 100vw;
-  height: 100vh;
-
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.88);
-  backdrop-filter: blur(5px);
 
   z-index: 99999;
 
   justify-content: center;
   align-items: center;
 
-  padding: 20px;
+  padding: 30px;
 }
 
-/* DESKTOP PDF BOX */
-
+/* PDF popup box */
 .resume-container {
   position: relative;
 
-  width: min(1200px, 92vw);
-  height: min(900px, 92vh);
+  width: 90vw;
+  max-width: 1100px;
 
-  background: #ffffff;
+  height: 90vh;
+  max-height: 900px;
 
-  border-radius: 15px;
+  background: #222;
+  border-radius: 14px;
 
   overflow: hidden;
 
   box-shadow:
-    0 0 30px rgba(155, 92, 255, 0.5),
-    0 0 70px rgba(155, 92, 255, 0.25);
+    0 0 30px rgba(155, 92, 255, 0.35),
+    0 0 70px rgba(155, 92, 255, 0.15);
 }
 
-/* PDF */
-
+/* PDF viewer */
 .resume-container iframe {
   display: block;
 
@@ -1552,21 +1549,18 @@ body {
   height: 100%;
 
   border: none;
-
   background: white;
 }
 
-
-/* CLOSE BUTTON */
-
+/* Close button */
 .close-resume {
   position: absolute;
 
-  top: 12px;
-  right: 15px;
+  top: 10px;
+  right: 12px;
 
-  width: 45px;
-  height: 45px;
+  width: 44px;
+  height: 44px;
 
   border: none;
   border-radius: 50%;
@@ -1595,179 +1589,23 @@ body {
 
 
 /* =====================================================
-   OUTPUT POPUP
-===================================================== */
-
-.output-modal {
-  display: none;
-
-  position: fixed;
-  inset: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  background: rgba(0, 0, 0, 0.90);
-  backdrop-filter: blur(6px);
-
-  z-index: 99999;
-
-  justify-content: center;
-  align-items: center;
-
-  padding: 20px;
-}
-
-
-/* OUTPUT WINDOW */
-
-.output-container {
-  position: relative;
-
-  width: min(1200px, 92vw);
-  height: min(850px, 90vh);
-
-  background: #151515;
-
-  border: 1px solid rgba(155, 92, 255, 0.4);
-
-  border-radius: 18px;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 0 35px rgba(155, 92, 255, 0.45),
-    0 0 80px rgba(155, 92, 255, 0.2);
-
-  display: flex;
-  flex-direction: column;
-}
-
-
-/* OUTPUT IMAGE */
-
-.output-content {
-  flex: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 60px 30px 70px;
-
-  overflow: hidden;
-}
-
-.output-content img {
-  max-width: 100%;
-  max-height: 100%;
-
-  width: auto;
-  height: auto;
-
-  object-fit: contain;
-
-  border-radius: 8px;
-
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
-}
-
-
-/* OUTPUT CLOSE BUTTON */
-
-.close-output {
-  position: absolute;
-
-  top: 12px;
-  right: 15px;
-
-  width: 45px;
-  height: 45px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: #000;
-  color: white;
-
-  font-size: 27px;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  z-index: 10;
-}
-
-.close-output:hover {
-  background: #ff3333;
-}
-
-
-/* NEXT / PREVIOUS */
-
-.output-controls {
-  position: absolute;
-
-  bottom: 15px;
-  left: 0;
-  right: 0;
-
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-
-  z-index: 10;
-}
-
-.output-controls button {
-  border: none;
-
-  padding: 10px 22px;
-
-  border-radius: 25px;
-
-  background: #9b5cff;
-  color: #000;
-
-  font-size: 15px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.output-controls button:hover {
-  background: #c77dff;
-  transform: translateY(-2px);
-}
-
-.output-counter {
-  color: white;
-
-  display: flex;
-  align-items: center;
-
-  font-size: 14px;
-}
-
-
-/* =====================================================
-   MOBILE PDF / OUTPUT POPUP
+   MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
 
-  .resume-modal,
-  .output-modal {
-    padding: 10px;
+  .resume-modal {
+    padding: 12px;
   }
 
   .resume-container {
     width: 96vw;
     height: 92vh;
 
-    border-radius: 12px;
+    max-width: none;
+    max-height: none;
+
+    border-radius: 10px;
   }
 
   .close-resume {
@@ -1779,77 +1617,30 @@ body {
 
     font-size: 24px;
   }
-
-
-  /* OUTPUT MOBILE */
-
-  .output-container {
-    width: 96vw;
-    height: 88vh;
-
-    border-radius: 14px;
-  }
-
-  .output-content {
-    padding: 55px 10px 65px;
-  }
-
-  .output-content img {
-    max-width: 100%;
-    max-height: 100%;
-
-    object-fit: contain;
-  }
-
-  .close-output {
-    width: 40px;
-    height: 40px;
-
-    top: 8px;
-    right: 8px;
-
-    font-size: 24px;
-  }
-
-  .output-controls {
-    bottom: 10px;
-    gap: 8px;
-  }
-
-  .output-controls button {
-    padding: 8px 15px;
-    font-size: 13px;
-  }
-
-  .output-counter {
-    font-size: 12px;
-  }
 }
 
 
-/* VERY SMALL PHONES */
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
-  .hero h1 {
-    font-size: 1.7rem;
+  .resume-modal {
+    padding: 6px;
   }
 
-  .card {
-    width: calc(100% - 20px);
-    padding: 20px 15px;
+  .resume-container {
+    width: 98vw;
+    height: 94vh;
+
+    border-radius: 8px;
   }
 
-  .output-container {
-    width: 97vw;
-    height: 86vh;
-  }
+  .close-resume {
+    width: 38px;
+    height: 38px;
 
-  .output-content {
-    padding: 50px 5px 60px;
-  }
-
-  .output-controls button {
-    padding: 7px 12px;
+    font-size: 22px;
   }
 }
