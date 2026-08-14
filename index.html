@@ -436,9 +436,9 @@
 </section>
 <script>
 
-/* =========================
+/* =====================================================
    MOBILE MENU
-========================= */
+===================================================== */
 
 const toggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav-links");
@@ -448,6 +448,7 @@ if (toggle && nav) {
   toggle.addEventListener("click", () => {
 
     nav.classList.toggle("active");
+
     toggle.classList.toggle("open");
 
   });
@@ -455,24 +456,34 @@ if (toggle && nav) {
 }
 
 
-/* =========================
+/* =====================================================
    RESUME
-========================= */
+===================================================== */
 
 function openResume(event) {
 
-  event.preventDefault();
+  if (event) {
+    event.preventDefault();
+  }
 
   const modal = document.getElementById("resumeModal");
 
-  if (!modal) {
-    console.error("resumeModal not found");
+  const viewer = document.getElementById("resumeViewer");
+
+  if (!modal || !viewer) {
+
+    console.error("Resume popup not found");
+
     return;
+
   }
+
+  viewer.src = "resume.pdf";
 
   modal.style.display = "flex";
 
   document.body.style.overflow = "hidden";
+
 }
 
 
@@ -480,36 +491,50 @@ function closeResume() {
 
   const modal = document.getElementById("resumeModal");
 
-  if (!modal) return;
+  const viewer = document.getElementById("resumeViewer");
+
+  if (!modal || !viewer) return;
 
   modal.style.display = "none";
 
+  viewer.src = "";
+
   document.body.style.overflow = "";
+
 }
 
 
-/* =========================
+/* =====================================================
    PROJECT PDF
-========================= */
+===================================================== */
 
 function openPdf(pdfFile) {
 
   const modal = document.getElementById("pdfModal");
+
   const viewer = document.getElementById("pdfViewer");
 
-  if (!modal || !viewer) return;
+  if (!modal || !viewer) {
 
-  viewer.src = pdfFile;
+    console.error("PDF popup not found");
+
+    return;
+
+  }
+
+  viewer.src = pdfFile + "#toolbar=0&navpanes=0&scrollbar=0";
 
   modal.style.display = "flex";
 
   document.body.style.overflow = "hidden";
+
 }
 
 
 function closePdf() {
 
   const modal = document.getElementById("pdfModal");
+
   const viewer = document.getElementById("pdfViewer");
 
   if (!modal || !viewer) return;
@@ -519,12 +544,13 @@ function closePdf() {
   viewer.src = "";
 
   document.body.style.overflow = "";
+
 }
 
 
-/* =========================
-   PHASES
-========================= */
+/* =====================================================
+   PERSONAL FINANCE PHASES
+===================================================== */
 
 let currentPhase = 1;
 
@@ -544,41 +570,66 @@ function openPhases() {
   modal.style.display = "flex";
 
   document.body.style.overflow = "hidden";
+
 }
 
 
 function showPhase() {
 
-  const image = document.getElementById("phaseImage");
-  const title = document.getElementById("phaseTitle");
-  const number = document.getElementById("phaseNumber");
+  const image =
+    document.getElementById("phaseImage");
 
-  const previousBtn = document.getElementById("previousBtn");
-  const nextBtn = document.getElementById("nextBtn");
+  const title =
+    document.getElementById("phaseTitle");
+
+  const number =
+    document.getElementById("phaseNumber");
+
+  const previousBtn =
+    document.getElementById("previousBtn");
+
+  const nextBtn =
+    document.getElementById("nextBtn");
+
 
   if (!image) return;
 
-  image.src = `PHASE ${currentPhase}.png`;
+
+  image.src =
+    `PHASE ${currentPhase}.png`;
+
 
   if (title) {
+
     title.textContent =
       `Personal Finance App - Phase ${currentPhase}`;
+
   }
+
 
   if (number) {
+
     number.textContent =
       `${currentPhase} / ${totalPhases}`;
+
   }
+
 
   if (previousBtn) {
+
     previousBtn.disabled =
       currentPhase === 1;
+
   }
 
+
   if (nextBtn) {
+
     nextBtn.disabled =
       currentPhase === totalPhases;
+
   }
+
 }
 
 
@@ -591,6 +642,7 @@ function nextPhase() {
     showPhase();
 
   }
+
 }
 
 
@@ -603,24 +655,27 @@ function previousPhase() {
     showPhase();
 
   }
+
 }
 
 
 function closePhases() {
 
-  const modal = document.getElementById("phaseModal");
+  const modal =
+    document.getElementById("phaseModal");
 
   if (!modal) return;
 
   modal.style.display = "none";
 
   document.body.style.overflow = "";
+
 }
 
 
-/* =========================
-   APK
-========================= */
+/* =====================================================
+   APK DOWNLOAD
+===================================================== */
 
 function downloadAPK() {
 
@@ -631,24 +686,67 @@ function downloadAPK() {
 
   message.style.display = "block";
 
+
   setTimeout(() => {
 
     message.style.display = "none";
 
   }, 3000);
+
 }
 
 
-/* =========================
-   ESC
-========================= */
+/* =====================================================
+   CLICK OUTSIDE POPUP TO CLOSE
+===================================================== */
+
+document.addEventListener("click", function(event) {
+
+  const resumeModal =
+    document.getElementById("resumeModal");
+
+  const pdfModal =
+    document.getElementById("pdfModal");
+
+  const phaseModal =
+    document.getElementById("phaseModal");
+
+
+  if (event.target === resumeModal) {
+
+    closeResume();
+
+  }
+
+
+  if (event.target === pdfModal) {
+
+    closePdf();
+
+  }
+
+
+  if (event.target === phaseModal) {
+
+    closePhases();
+
+  }
+
+});
+
+
+/* =====================================================
+   ESC KEY
+===================================================== */
 
 document.addEventListener("keydown", function(event) {
 
   if (event.key === "Escape") {
 
     closeResume();
+
     closePdf();
+
     closePhases();
 
   }
