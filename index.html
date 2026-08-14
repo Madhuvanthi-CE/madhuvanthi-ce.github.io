@@ -51,23 +51,32 @@
 
 </a>
 </header>
+  <!-- =========================
+     RESUME POPUP
+========================= -->
 
+<div id="resumeModal" class="resume-modal">
 
+  <div class="resume-container">
 
-
-    <!-- Close Button -->
-    <button class="close-resume" onclick="closeResume()">
+    <button class="close-resume" onclick="closeResume()" aria-label="Close Resume">
       &times;
     </button>
 
-    <!-- Resume PDF -->
     <iframe
-      src="resume.pdf"
+      id="resumeViewer"
+      src=""
       title="Resume">
     </iframe>
 
   </div>
+
 </div>
+
+
+
+
+
 <!-- INTRO -->
 <section class="card slide-up">
   <!-- INTRO -->
@@ -256,44 +265,82 @@
 
 </section>
 
-  <!-- PDF POPUP -->
+  <!-- =========================
+     PDF POPUP
+========================= -->
+
 <div id="pdfModal" class="project-modal">
 
   <div class="project-modal-container">
 
-    <button class="modal-close" onclick="closePdf()">
+    <button
+      class="modal-close"
+      onclick="closePdf()"
+      aria-label="Close PDF">
+
       &times;
+
     </button>
 
-    <iframe id="pdfViewer" src="" title="Project Output"></iframe>
+    <iframe
+      id="pdfViewer"
+      src=""
+      title="Project Output">
+    </iframe>
 
   </div>
 
 </div>
 
-  <!-- PHASE OUTPUT POPUP -->
+
+<!-- =========================
+     PERSONAL FINANCE PHASE POPUP
+========================= -->
+
 <div id="phaseModal" class="project-modal">
 
   <div class="phase-container">
 
-    <button class="modal-close" onclick="closePhases()">
+    <button
+      class="modal-close"
+      onclick="closePhases()"
+      aria-label="Close Output">
+
       &times;
+
     </button>
 
-    <h2 id="phaseTitle">Personal Finance App - Phase 1</h2>
+    <h2 id="phaseTitle">
+      Personal Finance App - Phase 1
+    </h2>
 
-    <img id="phaseImage" src="" alt="Project Phase">
+    <img
+      id="phaseImage"
+      src=""
+      alt="Personal Finance App Phase">
 
     <div class="phase-controls">
 
-      <button id="previousBtn" onclick="previousPhase()">
-        <i class="fa-solid fa-arrow-left"></i> Previous
+      <button
+        id="previousBtn"
+        onclick="previousPhase()">
+
+        <i class="fa-solid fa-arrow-left"></i>
+        Previous
+
       </button>
 
-      <span id="phaseNumber">1 / 7</span>
+      <span id="phaseNumber">
+        1 / 7
+      </span>
 
-      <button id="nextBtn" onclick="nextPhase()">
-        Next <i class="fa-solid fa-arrow-right"></i>
+      <button
+        id="nextBtn"
+        onclick="nextPhase()">
+
+        Next
+        <i class="fa-solid fa-arrow-right"></i>
+
       </button>
 
     </div>
@@ -302,10 +349,17 @@
 
 </div>
 
-  <!-- DOWNLOAD SUCCESS MESSAGE -->
+
+<!-- =========================
+     APK SUCCESS MESSAGE
+========================= -->
+
 <div id="downloadMessage" class="download-message">
+
   <i class="fa-solid fa-circle-check"></i>
+
   APK downloaded successfully!
+
 </div>
 
 <!-- INTERNSHIP -->
