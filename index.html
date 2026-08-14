@@ -6,9 +6,6 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="style.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -79,9 +76,8 @@
 
 <!-- INTRO -->
 <section class="card slide-up">
-  <!-- INTRO -->
-<section class="card slide-up">
-  <h2> Introduction</h2>
+
+  <h2>Introduction</h2>
 
   <p>
     👋 Hello there! Welcome to my portfolio.
@@ -94,6 +90,7 @@
   <p>
     💡 I enjoy solving real-world problems through technology, continuously learning new skills, and building innovative software solutions. 🚀 Scroll down to explore my education, technical skills, internships, certifications, and projects.
   </p>
+
 </section>
 
 <!-- EDUCATION -->
@@ -448,7 +445,6 @@ if (toggle && nav) {
   toggle.addEventListener("click", () => {
 
     nav.classList.toggle("active");
-
     toggle.classList.toggle("open");
 
   });
@@ -457,7 +453,37 @@ if (toggle && nav) {
 
 
 /* =====================================================
-   RESUME
+   BODY SCROLL CONTROL
+===================================================== */
+
+function lockScroll() {
+  document.body.style.overflow = "hidden";
+}
+
+function unlockScroll() {
+
+  const resumeModal = document.getElementById("resumeModal");
+  const pdfModal = document.getElementById("pdfModal");
+  const phaseModal = document.getElementById("phaseModal");
+
+  const resumeOpen =
+    resumeModal && resumeModal.style.display === "flex";
+
+  const pdfOpen =
+    pdfModal && pdfModal.style.display === "flex";
+
+  const phaseOpen =
+    phaseModal && phaseModal.style.display === "flex";
+
+  if (!resumeOpen && !pdfOpen && !phaseOpen) {
+    document.body.style.overflow = "";
+  }
+
+}
+
+
+/* =====================================================
+   RESUME POPUP
 ===================================================== */
 
 function openResume(event) {
@@ -467,22 +493,23 @@ function openResume(event) {
   }
 
   const modal = document.getElementById("resumeModal");
-
   const viewer = document.getElementById("resumeViewer");
 
   if (!modal || !viewer) {
-
     console.error("Resume popup not found");
-
     return;
-
   }
+
+  /*
+     Resume PDF opens ONLY inside popup.
+     It will NOT appear beside the hero section.
+  */
 
   viewer.src = "resume.pdf";
 
   modal.style.display = "flex";
 
-  document.body.style.overflow = "hidden";
+  lockScroll();
 
 }
 
@@ -490,43 +517,51 @@ function openResume(event) {
 function closeResume() {
 
   const modal = document.getElementById("resumeModal");
-
   const viewer = document.getElementById("resumeViewer");
 
   if (!modal || !viewer) return;
 
   modal.style.display = "none";
 
+  /*
+     Clear iframe when closed
+     so PDF completely disappears.
+  */
+
   viewer.src = "";
 
-  document.body.style.overflow = "";
+  unlockScroll();
 
 }
 
 
 /* =====================================================
-   PROJECT PDF
+   PROJECT PDF POPUP
 ===================================================== */
 
 function openPdf(pdfFile) {
 
   const modal = document.getElementById("pdfModal");
-
   const viewer = document.getElementById("pdfViewer");
 
   if (!modal || !viewer) {
 
-    console.error("PDF popup not found");
-
+    console.error("Project PDF popup not found");
     return;
 
   }
 
-  viewer.src = pdfFile + "#toolbar=0&navpanes=0&scrollbar=0";
+  /*
+     Open PDF ONLY inside popup.
+  */
+
+  viewer.src =
+    pdfFile +
+    "#toolbar=0&navpanes=0&scrollbar=0";
 
   modal.style.display = "flex";
 
-  document.body.style.overflow = "hidden";
+  lockScroll();
 
 }
 
@@ -534,22 +569,26 @@ function openPdf(pdfFile) {
 function closePdf() {
 
   const modal = document.getElementById("pdfModal");
-
   const viewer = document.getElementById("pdfViewer");
 
   if (!modal || !viewer) return;
 
   modal.style.display = "none";
 
+  /*
+     Clear PDF iframe
+     when popup is closed.
+  */
+
   viewer.src = "";
 
-  document.body.style.overflow = "";
+  unlockScroll();
 
 }
 
 
 /* =====================================================
-   PERSONAL FINANCE PHASES
+   PERSONAL FINANCE PHASE POPUP
 ===================================================== */
 
 let currentPhase = 1;
@@ -569,7 +608,7 @@ function openPhases() {
 
   modal.style.display = "flex";
 
-  document.body.style.overflow = "hidden";
+  lockScroll();
 
 }
 
@@ -594,6 +633,17 @@ function showPhase() {
 
   if (!image) return;
 
+
+  /*
+     Make sure the image filename matches
+     your GitHub file exactly.
+
+     Example:
+     PHASE 1.png
+     PHASE 2.png
+     ...
+     PHASE 7.png
+  */
 
   image.src =
     `PHASE ${currentPhase}.png`;
@@ -633,6 +683,8 @@ function showPhase() {
 }
 
 
+/* ---------- NEXT ---------- */
+
 function nextPhase() {
 
   if (currentPhase < totalPhases) {
@@ -645,6 +697,8 @@ function nextPhase() {
 
 }
 
+
+/* ---------- PREVIOUS ---------- */
 
 function previousPhase() {
 
@@ -659,6 +713,8 @@ function previousPhase() {
 }
 
 
+/* ---------- CLOSE ---------- */
+
 function closePhases() {
 
   const modal =
@@ -668,13 +724,13 @@ function closePhases() {
 
   modal.style.display = "none";
 
-  document.body.style.overflow = "";
+  unlockScroll();
 
 }
 
 
 /* =====================================================
-   APK DOWNLOAD
+   APK DOWNLOAD MESSAGE
 ===================================================== */
 
 function downloadAPK() {
@@ -697,7 +753,7 @@ function downloadAPK() {
 
 
 /* =====================================================
-   CLICK OUTSIDE POPUP TO CLOSE
+   CLOSE POPUP WHEN CLICKING OUTSIDE
 ===================================================== */
 
 document.addEventListener("click", function(event) {
@@ -712,6 +768,10 @@ document.addEventListener("click", function(event) {
     document.getElementById("phaseModal");
 
 
+  /*
+     Resume
+  */
+
   if (event.target === resumeModal) {
 
     closeResume();
@@ -719,12 +779,20 @@ document.addEventListener("click", function(event) {
   }
 
 
+  /*
+     Project PDF
+  */
+
   if (event.target === pdfModal) {
 
     closePdf();
 
   }
 
+
+  /*
+     Personal Finance
+  */
 
   if (event.target === phaseModal) {
 
@@ -744,14 +812,38 @@ document.addEventListener("keydown", function(event) {
   if (event.key === "Escape") {
 
     closeResume();
-
     closePdf();
-
     closePhases();
 
   }
 
 });
+
+
+/* =====================================================
+   CLOSE MOBILE MENU AFTER CLICKING A LINK
+===================================================== */
+
+if (nav) {
+
+  const navItems =
+    nav.querySelectorAll("a");
+
+  navItems.forEach(function(item) {
+
+    item.addEventListener("click", function() {
+
+      nav.classList.remove("active");
+
+      if (toggle) {
+        toggle.classList.remove("open");
+      }
+
+    });
+
+  });
+
+}
 
 </script>
 
