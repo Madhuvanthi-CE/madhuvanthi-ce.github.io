@@ -788,69 +788,88 @@
 
 
 <!-- =====================================================
-     INTERNSHIP
+     INTERNSHIP & CERTIFICATIONS
 ===================================================== -->
 
 <section class="card slide-up">
 
-  <h2>
-    Internship
-  </h2>
+  <h2>Internship</h2>
 
+  <!-- PYROFERUS -->
+  <div class="internship-item">
 
-  <h3>
-    Omsevel – AI-based Company
-  </h3>
+    <h3>
+      🧪 Pyroferus Technologies – Quality Assurance (QA) Intern Trainee
+    </h3>
 
+    <p>
+      Hands-on experience in Manual Testing and Automation Testing,
+      including test case execution, defect identification, and
+      Selenium-based web automation.
+    </p>
 
-  <p>
-    Hands-on experience in AI fundamentals and AI–IoT integration.
-  </p>
+    <button
+      class="cert-btn"
+      onclick="openCertificate('pyroferus-qa-certificate.pdf')"
+    >
+      <i class="fa-solid fa-certificate"></i>
+      View Internship Certificate
+    </button>
 
-
-  <a
-    class="cert-btn"
-    href="https://github.com/Rockymadhu/internship-certificate/blob/main/internship-certificate.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-
-    <i class="fa-solid fa-certificate"></i>
-
-    View Internship Certificate
-
-  </a>
+  </div>
 
 
   <br><br>
 
 
-  <h3>
-    Internet of Things (IoT) Certification
-  </h3>
+  <!-- OMSEVEL -->
+  <div class="internship-item">
+
+    <h3>
+      🤖 Omsevel – AI-based Company
+    </h3>
+
+    <p>
+      Hands-on experience in AI fundamentals and AI–IoT integration.
+    </p>
+
+    <button
+      class="cert-btn"
+      onclick="openCertificate('internship-certificate.pdf')"
+    >
+      <i class="fa-solid fa-certificate"></i>
+      View Internship Certificate
+    </button>
+
+  </div>
 
 
-  <p>
-    Completed certification covering IoT fundamentals,
-    architecture, and real-time applications.
-  </p>
+  <br><br>
 
 
-  <a
-    class="cert-btn"
-    href="https://github.com/Rockymadhu/Internet-of-Things-IoT-/blob/main/Internet%20of%20Things%20(IoT).png"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
+  <!-- IoT -->
+  <div class="internship-item">
 
-    <i class="fa-solid fa-certificate"></i>
+    <h3>
+      🌐 Internet of Things (IoT) Certification
+    </h3>
 
-    View Certificate
+    <p>
+      Completed certification covering IoT fundamentals,
+      architecture, and real-time applications.
+    </p>
 
-  </a>
+    <button
+      class="cert-btn"
+      onclick="openCertificate('iot-certificate.pdf')"
+    >
+      <i class="fa-solid fa-certificate"></i>
+      View Certificate
+    </button>
+
+  </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1003,14 +1022,33 @@
 
 </section>
 
-
-
 <!-- =====================================================
-     JAVASCRIPT
+     CERTIFICATE PDF POPUP
 ===================================================== -->
 
-<script>
+<div id="certificateModal" class="project-modal">
 
+  <div class="project-modal-container">
+
+    <button
+      class="modal-close"
+      onclick="closeCertificate()"
+      aria-label="Close Certificate"
+    >
+      &times;
+    </button>
+
+    <iframe
+      id="certificateViewer"
+      src=""
+      title="Certificate"
+    ></iframe>
+
+  </div>
+
+</div>
+
+<script>
 
 /* =====================================================
    MOBILE MENU
@@ -1025,7 +1063,6 @@ const nav =
 
 if (toggle && nav) {
 
-
   toggle.addEventListener("click", function () {
 
     nav.classList.toggle("active");
@@ -1035,9 +1072,7 @@ if (toggle && nav) {
   });
 
 
-  /*
-     Keyboard support
-  */
+  /* Keyboard support */
 
   toggle.addEventListener("keydown", function (event) {
 
@@ -1082,6 +1117,9 @@ function unlockScroll() {
   const phaseModal =
     document.getElementById("phaseModal");
 
+  const certificateModal =
+    document.getElementById("certificateModal");
+
 
   const resumeOpen =
     resumeModal &&
@@ -1098,10 +1136,16 @@ function unlockScroll() {
     phaseModal.style.display === "flex";
 
 
+  const certificateOpen =
+    certificateModal &&
+    certificateModal.style.display === "flex";
+
+
   if (
     !resumeOpen &&
     !pdfOpen &&
-    !phaseOpen
+    !phaseOpen &&
+    !certificateOpen
   ) {
 
     document.body.style.overflow = "";
@@ -1113,11 +1157,10 @@ function unlockScroll() {
 
 
 /* =====================================================
-   RESUME
+   RESUME POPUP
 ===================================================== */
 
 function openResume(event) {
-
 
   if (event) {
 
@@ -1144,12 +1187,6 @@ function openResume(event) {
   }
 
 
-  /*
-     IMPORTANT:
-     resume.pdf must be in the same folder
-     as index.html.
-  */
-
   viewer.src =
     "resume.pdf#toolbar=0&navpanes=0";
 
@@ -1168,7 +1205,6 @@ function openResume(event) {
 
 
 function closeResume() {
-
 
   const modal =
     document.getElementById("resumeModal");
@@ -1202,11 +1238,10 @@ function closeResume() {
 
 
 /* =====================================================
-   PROJECT PDF
+   PROJECT PDF POPUP
 ===================================================== */
 
 function openPdf(pdfFile) {
-
 
   const modal =
     document.getElementById("pdfModal");
@@ -1224,10 +1259,7 @@ function openPdf(pdfFile) {
     document.getElementById("pdfDirectLink");
 
 
-  if (
-    !modal ||
-    !viewer
-  ) {
+  if (!modal || !viewer) {
 
     console.error(
       "Project PDF popup elements not found."
@@ -1238,49 +1270,48 @@ function openPdf(pdfFile) {
   }
 
 
-  /*
-     Reset previous state
-  */
+  /* Reset previous state */
 
   viewer.style.display = "none";
 
-  loading.style.display = "block";
 
-  error.style.display = "none";
+  if (loading) {
+
+    loading.style.display = "block";
+
+  }
 
 
-  /*
-     Create safe URL
-  */
+  if (error) {
+
+    error.style.display = "none";
+
+  }
+
+
+  /* Safe PDF URL */
 
   const pdfUrl =
     encodeURI(pdfFile);
 
 
-  /*
-     Direct PDF link
-  */
+  /* Direct PDF link */
 
   if (directLink) {
 
-    directLink.href =
-      pdfUrl;
+    directLink.href = pdfUrl;
 
   }
 
 
-  /*
-     Open PDF inside iframe
-  */
+  /* Load PDF */
 
   viewer.src =
     pdfUrl +
     "#toolbar=0&navpanes=0&scrollbar=0";
 
 
-  /*
-     Show popup
-  */
+  /* Open popup */
 
   modal.style.display = "flex";
 
@@ -1293,39 +1324,46 @@ function openPdf(pdfFile) {
   lockScroll();
 
 
-  /*
-     Wait for PDF iframe
-  */
+  /* PDF loaded */
 
   viewer.onload = function () {
 
-    loading.style.display = "none";
+    if (loading) {
+
+      loading.style.display = "none";
+
+    }
 
     viewer.style.display = "block";
 
   };
 
 
-  /*
-     PDF iframe error
-  */
+  /* PDF error */
 
   viewer.onerror = function () {
 
-    loading.style.display = "none";
+    if (loading) {
+
+      loading.style.display = "none";
+
+    }
 
     viewer.style.display = "none";
 
-    error.style.display = "block";
+
+    if (error) {
+
+      error.style.display = "block";
+
+    }
 
   };
 
 }
 
 
-
 function closePdf() {
-
 
   const modal =
     document.getElementById("pdfModal");
@@ -1381,15 +1419,130 @@ function closePdf() {
 
 
 /* =====================================================
-   PERSONAL FINANCE APP
+   CERTIFICATE PDF POPUP
 ===================================================== */
 
-
 /*
-   IMPORTANT:
-   These filenames must exactly match
-   your actual image files.
+   Use this function for:
+
+   - Omsevel Internship Certificate
+   - IoT Certificate
+   - Pyroferus Technologies QA Internship Certificate
 */
+
+
+function openCertificate(pdfFile) {
+
+  const modal =
+    document.getElementById("certificateModal");
+
+  const viewer =
+    document.getElementById("certificateViewer");
+
+
+  if (!modal || !viewer) {
+
+    console.error(
+      "Certificate popup elements not found."
+    );
+
+    return;
+
+  }
+
+
+  /*
+     Encode filename safely.
+  */
+
+  const pdfUrl =
+    encodeURI(pdfFile);
+
+
+  /*
+     Load certificate PDF.
+  */
+
+  viewer.src =
+    pdfUrl +
+    "#toolbar=0&navpanes=0&scrollbar=0";
+
+
+  /*
+     Open popup.
+  */
+
+  modal.style.display = "flex";
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  /*
+     Stop background scrolling.
+  */
+
+  lockScroll();
+
+}
+
+
+
+/* =====================================================
+   CLOSE CERTIFICATE POPUP
+===================================================== */
+
+function closeCertificate() {
+
+  const modal =
+    document.getElementById("certificateModal");
+
+  const viewer =
+    document.getElementById("certificateViewer");
+
+
+  if (!modal || !viewer) {
+
+    return;
+
+  }
+
+
+  /*
+     Hide popup.
+  */
+
+  modal.style.display = "none";
+
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  /*
+     Clear iframe.
+  */
+
+  viewer.src = "";
+
+
+  /*
+     Restore page scrolling.
+  */
+
+  unlockScroll();
+
+}
+
+
+
+/* =====================================================
+   PERSONAL FINANCE APP
+===================================================== */
 
 const phaseFiles = [
 
@@ -1416,7 +1569,6 @@ const totalPhases =
 ===================================================== */
 
 function openPhases() {
-
 
   currentPhase = 1;
 
@@ -1459,7 +1611,6 @@ function openPhases() {
 
 function showPhase() {
 
-
   const image =
     document.getElementById("phaseImage");
 
@@ -1489,51 +1640,40 @@ function showPhase() {
   }
 
 
-  /*
-     Reset
-  */
+  /* Reset */
 
   image.style.display = "none";
 
 
   if (loading) {
 
-    loading.style.display =
-      "block";
+    loading.style.display = "block";
 
   }
 
 
   if (error) {
 
-    error.style.display =
-      "none";
+    error.style.display = "none";
 
   }
 
 
-  /*
-     Image filename
-  */
+  /* Current image */
 
   const imageFile =
     phaseFiles[currentPhase - 1];
 
 
-  /*
-     Encode spaces correctly
-  */
-
   const imageUrl =
     encodeURI(imageFile);
 
 
-  image.src = imageUrl;
+  image.src =
+    imageUrl;
 
 
-  /*
-     Title
-  */
+  /* Title */
 
   if (title) {
 
@@ -1543,9 +1683,7 @@ function showPhase() {
   }
 
 
-  /*
-     Number
-  */
+  /* Number */
 
   if (number) {
 
@@ -1555,9 +1693,7 @@ function showPhase() {
   }
 
 
-  /*
-     Previous button
-  */
+  /* Previous */
 
   if (previousBtn) {
 
@@ -1567,9 +1703,7 @@ function showPhase() {
   }
 
 
-  /*
-     Next button
-  */
+  /* Next */
 
   if (nextBtn) {
 
@@ -1579,47 +1713,38 @@ function showPhase() {
   }
 
 
-  /*
-     Image loaded
-  */
+  /* Image loaded */
 
   image.onload = function () {
 
     if (loading) {
 
-      loading.style.display =
-        "none";
+      loading.style.display = "none";
 
     }
 
-    image.style.display =
-      "block";
+    image.style.display = "block";
 
   };
 
 
-  /*
-     Image failed
-  */
+  /* Image failed */
 
   image.onerror = function () {
 
     if (loading) {
 
-      loading.style.display =
-        "none";
+      loading.style.display = "none";
 
     }
 
 
-    image.style.display =
-      "none";
+    image.style.display = "none";
 
 
     if (error) {
 
-      error.style.display =
-        "block";
+      error.style.display = "block";
 
     }
 
@@ -1640,7 +1765,6 @@ function showPhase() {
 ===================================================== */
 
 function nextPhase() {
-
 
   if (
     currentPhase <
@@ -1663,7 +1787,6 @@ function nextPhase() {
 
 function previousPhase() {
 
-
   if (
     currentPhase >
     1
@@ -1684,7 +1807,6 @@ function previousPhase() {
 ===================================================== */
 
 function closePhases() {
-
 
   const modal =
     document.getElementById("phaseModal");
@@ -1718,16 +1840,6 @@ function closePhases() {
 ===================================================== */
 
 function downloadAPK(event) {
-
-
-  if (event) {
-
-    /*
-       Don't stop the browser's download.
-    */
-
-  }
-
 
   const message =
     document.getElementById(
@@ -1784,9 +1896,13 @@ document.addEventListener(
       );
 
 
-    /*
-       Resume
-    */
+    const certificateModal =
+      document.getElementById(
+        "certificateModal"
+      );
+
+
+    /* Resume */
 
     if (
       event.target ===
@@ -1798,9 +1914,7 @@ document.addEventListener(
     }
 
 
-    /*
-       PDF
-    */
+    /* Project PDF */
 
     if (
       event.target ===
@@ -1812,9 +1926,7 @@ document.addEventListener(
     }
 
 
-    /*
-       Personal Finance
-    */
+    /* Personal Finance */
 
     if (
       event.target ===
@@ -1822,6 +1934,18 @@ document.addEventListener(
     ) {
 
       closePhases();
+
+    }
+
+
+    /* Certificate */
+
+    if (
+      event.target ===
+      certificateModal
+    ) {
+
+      closeCertificate();
 
     }
 
@@ -1850,6 +1974,8 @@ document.addEventListener(
 
       closePhases();
 
+      closeCertificate();
+
     }
 
   }
@@ -1858,11 +1984,10 @@ document.addEventListener(
 
 
 /* =====================================================
-   CLOSE MOBILE MENU
+   CLOSE MOBILE MENU AFTER CLICK
 ===================================================== */
 
 if (nav) {
-
 
   const navItems =
     nav.querySelectorAll("a");
@@ -1898,9 +2023,7 @@ if (nav) {
 
 }
 
-
 </script>
-
 
 
 <!-- =====================================================
