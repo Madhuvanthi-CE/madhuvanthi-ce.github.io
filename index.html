@@ -1,70 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Madhuvanthi C E | Portfolio</title>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="style.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
 </head>
+
+
 <body>
 
-<nav class="navbar">
-  <h2 class="logo">Madhuvanthi C E</h2>
 
-  <!-- Hamburger -->
-  <div class="menu-toggle" id="menu-toggle">
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+  <h2 class="logo">
+    Madhuvanthi C E
+  </h2>
+
+
+  <!-- MOBILE MENU -->
+  <div
+    class="menu-toggle"
+    id="menu-toggle"
+    aria-label="Open Menu"
+    role="button"
+    tabindex="0"
+  >
+
     <span></span>
     <span></span>
     <span></span>
+
   </div>
 
+
   <ul id="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a class="hire-btn" href="#contact">Hire</a></li>
+
+    <li>
+      <a href="#home">Home</a>
+    </li>
+
+    <li>
+      <a href="#education">Education</a>
+    </li>
+
+    <li>
+      <a href="#skills">Skills</a>
+    </li>
+
+    <li>
+      <a href="#projects">Projects</a>
+    </li>
+
+    <li>
+      <a class="hire-btn" href="#contact">
+        Hire
+      </a>
+    </li>
+
   </ul>
+
 </nav>
 
-<!-- HERO -->
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <header class="hero" id="home">
-  <h1 class="fade-in">B.Tech Artificial Intelligence & Data Science</h1>
-  <p class="fade-in delay">Engineering solutions for tomorrow's challenges.</p>
 
- <a
-  class="resume-btn fade-in delay2"
-  href="#"
-  onclick="openResume(event)">
+  <h1 class="fade-in">
+    B.Tech Artificial Intelligence & Data Science
+  </h1>
 
-  <i class="fa-solid fa-file-pdf"></i>
-  View Resume
+  <p class="fade-in delay">
+    Engineering solutions for tomorrow's challenges.
+  </p>
 
-</a>
+
+  <a
+    class="resume-btn fade-in delay2"
+    href="resume.pdf"
+    onclick="openResume(event)"
+  >
+
+    <i class="fa-solid fa-file-pdf"></i>
+
+    View Resume
+
+  </a>
+
 </header>
-  <!-- =========================
-     RESUME POPUP
-========================= -->
 
-<div id="resumeModal" class="resume-modal">
+
+
+<!-- =====================================================
+     RESUME POPUP
+===================================================== -->
+
+<div
+  id="resumeModal"
+  class="resume-modal"
+  aria-hidden="true"
+>
 
   <div class="resume-container">
 
-    <button class="close-resume" onclick="closeResume()" aria-label="Close Resume">
+    <button
+      type="button"
+      class="close-resume"
+      onclick="closeResume()"
+      aria-label="Close Resume"
+    >
       &times;
     </button>
+
 
     <iframe
       id="resumeViewer"
       src=""
-      title="Resume">
-    </iframe>
+      title="Resume"
+      loading="lazy"
+    ></iframe>
 
   </div>
 
@@ -72,270 +153,611 @@
 
 
 
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
 
-
-<!-- INTRO -->
 <section class="card slide-up">
 
-  <h2>Introduction</h2>
+  <h2>
+    Introduction
+  </h2>
+
 
   <p>
     👋 Hello there! Welcome to my portfolio.
   </p>
 
-  <p>
-    🎓 I am currently pursuing a B.Tech in Artificial Intelligence & Data Science, with a strong interest in AI, data-driven technologies, software development, and backend applications. I previously completed my Diploma in Computer Engineering & IoT, where I gained hands-on experience by developing practical, real-time IoT projects.
-  </p>
 
   <p>
-    💡 I enjoy solving real-world problems through technology, continuously learning new skills, and building innovative software solutions. 🚀 Scroll down to explore my education, technical skills, internships, certifications, and projects.
+    🎓 I am currently pursuing a B.Tech in Artificial Intelligence
+    & Data Science, with a strong interest in AI, data-driven
+    technologies, software development, and backend applications.
+    I previously completed my Diploma in Computer Engineering & IoT,
+    where I gained hands-on experience by developing practical,
+    real-time IoT projects.
+  </p>
+
+
+  <p>
+    💡 I enjoy solving real-world problems through technology,
+    continuously learning new skills, and building innovative
+    software solutions. 🚀 Scroll down to explore my education,
+    technical skills, internships, certifications, and projects.
   </p>
 
 </section>
 
-<!-- EDUCATION -->
-<section class="card slide-up" id="education">
-  <h2>Education</h2>
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section
+  class="card slide-up"
+  id="education"
+>
+
+  <h2>
+    Education
+  </h2>
+
 
   <div class="edu-item">
-    <h3>SSLC (2020)</h3>
-    <p>Springfield Matriculation Higher Secondary School, Chennai</p>
+
+    <h3>
+      SSLC (2020)
+    </h3>
+
+    <p>
+      Springfield Matriculation Higher Secondary School, Chennai
+    </p>
+
   </div>
 
-  <div class="edu-item">
-    <h3>Diploma in Computer Engineering & IoT (2020–2023)</h3>
-    <p>T.S. Srinivasan Polytechnic College, Vanagaram, Chennai</p>
-  </div>
 
   <div class="edu-item">
-    <h3>B.Tech in Artificial Intelligence & Data Science (2026–Present)</h3>
-    <p>Pursuing – Meenakshi College of Engineering, K.K. Nagar, Chennai</p>
+
+    <h3>
+      Diploma in Computer Engineering & IoT (2020–2023)
+    </h3>
+
+    <p>
+      T.S. Srinivasan Polytechnic College, Vanagaram, Chennai
+    </p>
+
   </div>
+
+
+  <div class="edu-item">
+
+    <h3>
+      B.Tech in Artificial Intelligence & Data Science (2026–Present)
+    </h3>
+
+    <p>
+      Pursuing – Meenakshi College of Engineering, K.K. Nagar, Chennai
+    </p>
+
+  </div>
+
 </section>
 
-<!-- SKILLS -->
-<section class="card slide-up" id="skills">
-  <h2>Skills</h2>
 
-  <h3>Programming Languages</h3>
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section
+  class="card slide-up"
+  id="skills"
+>
+
+  <h2>
+    Skills
+  </h2>
+
+
+  <h3>
+    Programming Languages
+  </h3>
+
   <div class="skills">
+
     <span>C / C++</span>
     <span>Python</span>
     <span>Java</span>
     <span>MySQL</span>
+
   </div>
 
-  <h3>Web & App Development</h3>
+
+
+  <h3>
+    Web & App Development
+  </h3>
+
   <div class="skills">
+
     <span>HTML</span>
     <span>CSS</span>
     <span>Flutter</span>
+
   </div>
-  <h3>Backend Development</h3>
-<div class="skills">
-  <span>MongoDB</span>
-  <span>FastAPI</span>
-</div>
-  <h3>Internet Of Things</h3>
+
+
+
+  <h3>
+    Backend Development
+  </h3>
+
   <div class="skills">
-    <span>IoT Fundamentals & Architecture</span>
-    <span>Sensor & Actuator Interfacing</span>
-    <span>IoT Communication Protocols (MQTT, HTTP, REST)</span>
-  </div>
-  <h3>Software Testing</h3>
-<div class="skills">
-  <span>Manual Testing</span>
-  <span>Automation Testing</span>
-  <span>Selenium</span>
-  <span>WebDriver</span>
-</div>
-   <h3>Artificial Intelligence</h3>
-<div class="skills">
-  <span>Ultralytics (YOLOv5)</span>
-  <span>OpenCV</span>
-  <span>LangChain</span>
-</div>
- <h3>Tools & Platforms</h3>
-<div class="skills">
-  <span>VS Code</span>
-  <span>Eclipse IDE</span>
-  <span>Android Studio</span>
-  <span>Arduino IDE</span>
-  <span>WAMP Server</span>
-  <span>phpMyAdmin</span>
-  <span>Render</span>
-</div>
-</section>
 
-<!-- PROJECTS -->
-<section class="card slide-up" id="projects">
-  <h2>🚀 Projects</h2>
+    <span>MongoDB</span>
+    <span>FastAPI</span>
 
-  <!-- PROJECT 1 -->
-  <div class="project">
-    <h3>⚡ Energixion – Renewable Energy IoT</h3>
-
-    <p>
-      Smart energy harvesting using solar, wind & piezoelectric sources.
-    </p>
-
-    <button class="project-btn" onclick="openPdf('energixion-output.pdf')">
-      <i class="fa-solid fa-file-pdf"></i> Output
-    </button>
   </div>
 
 
-  <!-- PROJECT 2 -->
-  <div class="project">
-    <h3>🤖 AI Alert System</h3>
 
-    <p>
-      AI-based human detection system with alerts using OpenCV and YOLO.
-    </p>
+  <h3>
+    Internet Of Things
+  </h3>
 
-    <button class="project-btn" onclick="openPdf('ai-alert-output.pdf')">
-      <i class="fa-solid fa-file-pdf"></i> Output
-    </button>
+  <div class="skills">
+
+    <span>
+      IoT Fundamentals & Architecture
+    </span>
+
+    <span>
+      Sensor & Actuator Interfacing
+    </span>
+
+    <span>
+      IoT Communication Protocols (MQTT, HTTP, REST)
+    </span>
+
   </div>
 
 
-  <!-- PROJECT 3 -->
-  <div class="project">
-    <h3>💰 Personal Finance App</h3>
 
-    <p>
-      Flutter app to track income & expenses with multi-user support.
-    </p>
+  <h3>
+    Software Testing
+  </h3>
 
-    <button class="project-btn" onclick="openPhases()">
-      <i class="fa-solid fa-images"></i> Output
-    </button>
+  <div class="skills">
 
-    <a class="project-btn"
-       href="app-release.apk"
-       download
-       onclick="downloadAPK()">
-      <i class="fa-solid fa-download"></i> Download APK
-    </a>
+    <span>Manual Testing</span>
+    <span>Automation Testing</span>
+    <span>Selenium</span>
+    <span>WebDriver</span>
+
   </div>
 
 
-  <!-- PROJECT 4 -->
-  <div class="project">
-    <h3>🧠 LLM-Based Project Development Chatbot</h3>
 
-    <p>
-      AI-powered chatbot built using FastAPI, Groq LLM, and MongoDB.
-      Deployed on Render for live API access.
-    </p>
+  <h3>
+    Artificial Intelligence
+  </h3>
 
-    <a class="project-btn"
-       href="https://github.com/Rockymadhu/project-development_chatbot"
-       target="_blank">
-      <i class="fab fa-github"></i> View on GitHub
-    </a>
+  <div class="skills">
 
-    <a class="project-btn"
-       href="https://project-development-chatbot.onrender.com/docs"
-       target="_blank">
-      <i class="fa-solid fa-globe"></i> Live Demo
-    </a>
+    <span>Ultralytics (YOLOv5)</span>
+    <span>OpenCV</span>
+    <span>LangChain</span>
+
   </div>
 
 
-  <!-- PROJECT 5 -->
-  <div class="project">
-    <h3>🧪 OrangeHRM Test Automation (Selenium)</h3>
 
-    <p>
-      Built an automation testing framework using Selenium WebDriver for
-      OrangeHRM. Implemented login testing, element interaction, waits,
-      and test case execution.
-    </p>
+  <h3>
+    Tools & Platforms
+  </h3>
 
-    <a class="project-btn"
-       href="https://github.com/Rockymadhu/OrangeHRM-Selenium-Automation"
-       target="_blank">
-      <i class="fab fa-github"></i> View on GitHub
-    </a>
+  <div class="skills">
+
+    <span>VS Code</span>
+    <span>Eclipse IDE</span>
+    <span>Android Studio</span>
+    <span>Arduino IDE</span>
+    <span>WAMP Server</span>
+    <span>phpMyAdmin</span>
+    <span>Render</span>
+
   </div>
 
 </section>
 
-  <!-- =========================
-     PDF POPUP
-========================= -->
 
-<div id="pdfModal" class="project-modal">
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section
+  class="card slide-up"
+  id="projects"
+>
+
+  <h2>
+    🚀 Projects
+  </h2>
+
+
+
+  <!-- ===================================================
+       PROJECT 1
+  ==================================================== -->
+
+  <div class="project">
+
+    <h3>
+      ⚡ Energixion – Renewable Energy IoT
+    </h3>
+
+
+    <p>
+      Smart energy harvesting using solar, wind &
+      piezoelectric sources.
+    </p>
+
+
+    <button
+      type="button"
+      class="project-btn"
+      onclick="openPdf('energixion-output.pdf')"
+    >
+
+      <i class="fa-solid fa-file-pdf"></i>
+
+      Output
+
+    </button>
+
+  </div>
+
+
+
+  <!-- ===================================================
+       PROJECT 2
+  ==================================================== -->
+
+  <div class="project">
+
+    <h3>
+      🤖 AI Alert System
+    </h3>
+
+
+    <p>
+      AI-based human detection system with alerts using
+      OpenCV and YOLO.
+    </p>
+
+
+    <button
+      type="button"
+      class="project-btn"
+      onclick="openPdf('ai-alert-output.pdf')"
+    >
+
+      <i class="fa-solid fa-file-pdf"></i>
+
+      Output
+
+    </button>
+
+  </div>
+
+
+
+  <!-- ===================================================
+       PROJECT 3
+  ==================================================== -->
+
+  <div class="project">
+
+    <h3>
+      💰 Personal Finance App
+    </h3>
+
+
+    <p>
+      Flutter app to track income & expenses with
+      multi-user support.
+    </p>
+
+
+    <button
+      type="button"
+      class="project-btn"
+      onclick="openPhases()"
+    >
+
+      <i class="fa-solid fa-images"></i>
+
+      Output
+
+    </button>
+
+
+    <a
+      class="project-btn"
+      href="app-release.apk"
+      download
+      onclick="downloadAPK(event)"
+    >
+
+      <i class="fa-solid fa-download"></i>
+
+      Download APK
+
+    </a>
+
+  </div>
+
+
+
+  <!-- ===================================================
+       PROJECT 4
+  ==================================================== -->
+
+  <div class="project">
+
+    <h3>
+      🧠 LLM-Based Project Development Chatbot
+    </h3>
+
+
+    <p>
+      AI-powered chatbot built using FastAPI, Groq LLM,
+      and MongoDB. Deployed on Render for live API access.
+    </p>
+
+
+    <a
+      class="project-btn"
+      href="https://github.com/Rockymadhu/project-development_chatbot"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <i class="fab fa-github"></i>
+
+      View on GitHub
+
+    </a>
+
+
+    <a
+      class="project-btn"
+      href="https://project-development-chatbot.onrender.com/docs"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <i class="fa-solid fa-globe"></i>
+
+      Live Demo
+
+    </a>
+
+  </div>
+
+
+
+  <!-- ===================================================
+       PROJECT 5
+  ==================================================== -->
+
+  <div class="project">
+
+    <h3>
+      🧪 OrangeHRM Test Automation (Selenium)
+    </h3>
+
+
+    <p>
+      Built an automation testing framework using Selenium
+      WebDriver for OrangeHRM. Implemented login testing,
+      element interaction, waits, and test case execution.
+    </p>
+
+
+    <a
+      class="project-btn"
+      href="https://github.com/Rockymadhu/OrangeHRM-Selenium-Automation"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <i class="fab fa-github"></i>
+
+      View on GitHub
+
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECT PDF POPUP
+===================================================== -->
+
+<div
+  id="pdfModal"
+  class="project-modal"
+  aria-hidden="true"
+>
 
   <div class="project-modal-container">
 
+
     <button
+      type="button"
       class="modal-close"
       onclick="closePdf()"
-      aria-label="Close PDF">
+      aria-label="Close PDF"
+    >
 
       &times;
 
     </button>
+
+
+    <div
+      id="pdfLoading"
+      class="pdf-loading"
+    >
+
+      <i class="fa-solid fa-spinner fa-spin"></i>
+
+      Loading PDF...
+
+    </div>
+
 
     <iframe
       id="pdfViewer"
       src=""
-      title="Project Output">
-    </iframe>
+      title="Project Output"
+    ></iframe>
+
+
+    <div
+      id="pdfError"
+      class="pdf-error"
+    >
+
+      <i class="fa-solid fa-circle-exclamation"></i>
+
+      <p>
+        PDF could not be loaded.
+      </p>
+
+      <a
+        id="pdfDirectLink"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open PDF directly
+      </a>
+
+    </div>
 
   </div>
 
 </div>
 
 
-<!-- =========================
-     PERSONAL FINANCE PHASE POPUP
-========================= -->
 
-<div id="phaseModal" class="project-modal">
+<!-- =====================================================
+     PERSONAL FINANCE PHASE POPUP
+===================================================== -->
+
+<div
+  id="phaseModal"
+  class="project-modal"
+  aria-hidden="true"
+>
 
   <div class="phase-container">
 
+
     <button
+      type="button"
       class="modal-close"
       onclick="closePhases()"
-      aria-label="Close Output">
+      aria-label="Close Output"
+    >
 
       &times;
 
     </button>
+
 
     <h2 id="phaseTitle">
       Personal Finance App - Phase 1
     </h2>
 
-    <img
-      id="phaseImage"
-      src=""
-      alt="Personal Finance App Phase">
+
+    <div class="phase-image-container">
+
+      <div
+        id="phaseLoading"
+        class="phase-loading"
+      >
+
+        <i class="fa-solid fa-spinner fa-spin"></i>
+
+        Loading...
+
+      </div>
+
+
+      <img
+        id="phaseImage"
+        src=""
+        alt="Personal Finance App Phase"
+      >
+
+
+      <div
+        id="phaseError"
+        class="phase-error"
+      >
+
+        <i class="fa-solid fa-image"></i>
+
+        <p>
+          Phase image could not be loaded.
+        </p>
+
+        <small>
+          Check the image filename and location.
+        </small>
+
+      </div>
+
+    </div>
+
 
     <div class="phase-controls">
 
+
       <button
+        type="button"
         id="previousBtn"
-        onclick="previousPhase()">
+        onclick="previousPhase()"
+      >
 
         <i class="fa-solid fa-arrow-left"></i>
+
         Previous
 
       </button>
+
 
       <span id="phaseNumber">
         1 / 7
       </span>
 
+
       <button
+        type="button"
         id="nextBtn"
-        onclick="nextPhase()">
+        onclick="nextPhase()"
+      >
 
         Next
+
         <i class="fa-solid fa-arrow-right"></i>
 
       </button>
@@ -347,109 +769,295 @@
 </div>
 
 
-<!-- =========================
-     APK SUCCESS MESSAGE
-========================= -->
 
-<div id="downloadMessage" class="download-message">
+<!-- =====================================================
+     APK SUCCESS MESSAGE
+===================================================== -->
+
+<div
+  id="downloadMessage"
+  class="download-message"
+>
 
   <i class="fa-solid fa-circle-check"></i>
 
-  APK downloaded successfully!
+  APK download started!
 
 </div>
 
-<!-- INTERNSHIP -->
-<section class="card slide-up">
-  <h2>Internship</h2>
 
-  <h3>Omsevel – AI-based Company</h3>
+
+<!-- =====================================================
+     INTERNSHIP
+===================================================== -->
+
+<section class="card slide-up">
+
+  <h2>
+    Internship
+  </h2>
+
+
+  <h3>
+    Omsevel – AI-based Company
+  </h3>
+
+
   <p>
     Hands-on experience in AI fundamentals and AI–IoT integration.
   </p>
 
-  <a class="cert-btn" href="https://github.com/Rockymadhu/internship-certificate/blob/main/internship-certificate.pdf" target="_blank">
-    <i class="fa-solid fa-certificate"></i> View Internship Certificate
+
+  <a
+    class="cert-btn"
+    href="https://github.com/Rockymadhu/internship-certificate/blob/main/internship-certificate.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
+    <i class="fa-solid fa-certificate"></i>
+
+    View Internship Certificate
+
   </a>
+
 
   <br><br>
 
-  <h3>Internet of Things (IoT) Certification</h3>
+
+  <h3>
+    Internet of Things (IoT) Certification
+  </h3>
+
+
   <p>
-    Completed certification covering IoT fundamentals, architecture, and real-time applications.
+    Completed certification covering IoT fundamentals,
+    architecture, and real-time applications.
   </p>
 
-  <a class="cert-btn" href="https://github.com/Rockymadhu/Internet-of-Things-IoT-/blob/main/Internet%20of%20Things%20(IoT).png" target="_blank">
-    <i class="fa-solid fa-certificate"></i> View Certificate
+
+  <a
+    class="cert-btn"
+    href="https://github.com/Rockymadhu/Internet-of-Things-IoT-/blob/main/Internet%20of%20Things%20(IoT).png"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
+    <i class="fa-solid fa-certificate"></i>
+
+    View Certificate
+
   </a>
 
 </section>
 
-<!-- CERTIFICATIONS -->
+
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+
 <section class="card slide-up">
-  <h2>Certifications</h2>
+
+  <h2>
+    Certifications
+  </h2>
+
 
   <ul class="cert-list">
-    <li>
-      <a href="https://github.com/Rockymadhu/Certifications/blob/main/C%26Cpp.jpg" target="_blank">
-        <i class="fa-solid fa-award"></i> C/C++ Certificate
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/Rockymadhu/Certifications/blob/main/PYTHON.jpg" target="_blank">
-        <i class="fa-solid fa-award"></i> Python Programming Certificate
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/Rockymadhu/Certifications/blob/main/JAVA.jpg" target="_blank">
-        <i class="fa-solid fa-award"></i> Java Programming Certificate
-      </a>
-    </li>
-    <li>
-  <a href="https://github.com/Rockymadhu/Certifications/blob/main/Selenium.png" target="_blank">
-    <i class="fa-solid fa-award"></i> Selenium Beginner Course Certificate
-  </a>
-</li>
-  </ul>
-</section>
-  
 
-<!-- CONTACT -->
-<section class="card slide-up" id="contact">
-  <h2>Get In Touch</h2>
-  <p>I am currently available for internship opportunities.</p>
+    <li>
+
+      <a
+        href="https://github.com/Rockymadhu/Certifications/blob/main/C%26Cpp.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-solid fa-award"></i>
+
+        C/C++ Certificate
+
+      </a>
+
+    </li>
+
+
+    <li>
+
+      <a
+        href="https://github.com/Rockymadhu/Certifications/blob/main/PYTHON.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-solid fa-award"></i>
+
+        Python Programming Certificate
+
+      </a>
+
+    </li>
+
+
+    <li>
+
+      <a
+        href="https://github.com/Rockymadhu/Certifications/blob/main/JAVA.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-solid fa-award"></i>
+
+        Java Programming Certificate
+
+      </a>
+
+    </li>
+
+
+    <li>
+
+      <a
+        href="https://github.com/Rockymadhu/Certifications/blob/main/Selenium.png"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-solid fa-award"></i>
+
+        Selenium Beginner Course Certificate
+
+      </a>
+
+    </li>
+
+  </ul>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+  class="card slide-up"
+  id="contact"
+>
+
+  <h2>
+    Get In Touch
+  </h2>
+
+
+  <p>
+    I am currently available for internship opportunities.
+  </p>
+
 
   <div class="contact-links">
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=madhuvanthi.2747@gmail.com" target="_blank">
-      <i class="fa-solid fa-envelope"></i> Email
+
+
+    <a
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=madhuvanthi.2747@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <i class="fa-solid fa-envelope"></i>
+
+      Email
+
     </a>
-    <a href="https://github.com/Rockymadhu" target="_blank">
-      <i class="fab fa-github"></i> GitHub
+
+
+    <a
+      href="https://github.com/Rockymadhu"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <i class="fab fa-github"></i>
+
+      GitHub
+
     </a>
-    <a href="https://www.linkedin.com/in/madhuvanthi-c-e/" target="_blank">
-      <i class="fab fa-linkedin"></i> LinkedIn
+
+
+    <a
+      href="https://www.linkedin.com/in/madhuvanthi-c-e/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <i class="fab fa-linkedin"></i>
+
+      LinkedIn
+
     </a>
+
   </div>
+
 </section>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
+
 
 /* =====================================================
    MOBILE MENU
 ===================================================== */
 
-const toggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav-links");
+const toggle =
+  document.getElementById("menu-toggle");
+
+const nav =
+  document.getElementById("nav-links");
+
 
 if (toggle && nav) {
 
-  toggle.addEventListener("click", () => {
+
+  toggle.addEventListener("click", function () {
 
     nav.classList.toggle("active");
+
     toggle.classList.toggle("open");
 
   });
 
+
+  /*
+     Keyboard support
+  */
+
+  toggle.addEventListener("keydown", function (event) {
+
+    if (
+      event.key === "Enter" ||
+      event.key === " "
+    ) {
+
+      event.preventDefault();
+
+      nav.classList.toggle("active");
+
+      toggle.classList.toggle("open");
+
+    }
+
+  });
+
 }
+
 
 
 /* =====================================================
@@ -457,57 +1065,102 @@ if (toggle && nav) {
 ===================================================== */
 
 function lockScroll() {
+
   document.body.style.overflow = "hidden";
+
 }
+
 
 function unlockScroll() {
 
-  const resumeModal = document.getElementById("resumeModal");
-  const pdfModal = document.getElementById("pdfModal");
-  const phaseModal = document.getElementById("phaseModal");
+  const resumeModal =
+    document.getElementById("resumeModal");
+
+  const pdfModal =
+    document.getElementById("pdfModal");
+
+  const phaseModal =
+    document.getElementById("phaseModal");
+
 
   const resumeOpen =
-    resumeModal && resumeModal.style.display === "flex";
+    resumeModal &&
+    resumeModal.style.display === "flex";
+
 
   const pdfOpen =
-    pdfModal && pdfModal.style.display === "flex";
+    pdfModal &&
+    pdfModal.style.display === "flex";
+
 
   const phaseOpen =
-    phaseModal && phaseModal.style.display === "flex";
+    phaseModal &&
+    phaseModal.style.display === "flex";
 
-  if (!resumeOpen && !pdfOpen && !phaseOpen) {
+
+  if (
+    !resumeOpen &&
+    !pdfOpen &&
+    !phaseOpen
+  ) {
+
     document.body.style.overflow = "";
+
   }
 
 }
 
 
+
 /* =====================================================
-   RESUME POPUP
+   RESUME
 ===================================================== */
 
 function openResume(event) {
 
+
   if (event) {
+
     event.preventDefault();
+
   }
 
-  const modal = document.getElementById("resumeModal");
-  const viewer = document.getElementById("resumeViewer");
+
+  const modal =
+    document.getElementById("resumeModal");
+
+  const viewer =
+    document.getElementById("resumeViewer");
+
 
   if (!modal || !viewer) {
-    console.error("Resume popup not found");
+
+    console.error(
+      "Resume popup elements not found."
+    );
+
     return;
+
   }
 
+
   /*
-     Resume PDF opens ONLY inside popup.
-     It will NOT appear beside the hero section.
+     IMPORTANT:
+     resume.pdf must be in the same folder
+     as index.html.
   */
 
-  viewer.src = "resume.pdf";
+  viewer.src =
+    "resume.pdf#toolbar=0&navpanes=0";
+
 
   modal.style.display = "flex";
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
 
   lockScroll();
 
@@ -516,104 +1169,296 @@ function openResume(event) {
 
 function closeResume() {
 
-  const modal = document.getElementById("resumeModal");
-  const viewer = document.getElementById("resumeViewer");
 
-  if (!modal || !viewer) return;
+  const modal =
+    document.getElementById("resumeModal");
 
-  modal.style.display = "none";
+  const viewer =
+    document.getElementById("resumeViewer");
 
-  /*
-     Clear iframe when closed
-     so PDF completely disappears.
-  */
-
-  viewer.src = "";
-
-  unlockScroll();
-
-}
-
-
-/* =====================================================
-   PROJECT PDF POPUP
-===================================================== */
-
-function openPdf(pdfFile) {
-
-  const modal = document.getElementById("pdfModal");
-  const viewer = document.getElementById("pdfViewer");
 
   if (!modal || !viewer) {
 
-    console.error("Project PDF popup not found");
     return;
 
   }
 
-  /*
-     Open PDF ONLY inside popup.
-  */
-
-  viewer.src =
-    pdfFile +
-    "#toolbar=0&navpanes=0&scrollbar=0";
-
-  modal.style.display = "flex";
-
-  lockScroll();
-
-}
-
-
-function closePdf() {
-
-  const modal = document.getElementById("pdfModal");
-  const viewer = document.getElementById("pdfViewer");
-
-  if (!modal || !viewer) return;
 
   modal.style.display = "none";
 
-  /*
-     Clear PDF iframe
-     when popup is closed.
-  */
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
 
   viewer.src = "";
+
 
   unlockScroll();
 
 }
 
 
+
 /* =====================================================
-   PERSONAL FINANCE PHASE POPUP
+   PROJECT PDF
 ===================================================== */
 
-let currentPhase = 1;
-
-const totalPhases = 7;
+function openPdf(pdfFile) {
 
 
-function openPhases() {
+  const modal =
+    document.getElementById("pdfModal");
 
-  currentPhase = 1;
+  const viewer =
+    document.getElementById("pdfViewer");
 
-  showPhase();
+  const loading =
+    document.getElementById("pdfLoading");
 
-  const modal = document.getElementById("phaseModal");
+  const error =
+    document.getElementById("pdfError");
 
-  if (!modal) return;
+  const directLink =
+    document.getElementById("pdfDirectLink");
+
+
+  if (
+    !modal ||
+    !viewer
+  ) {
+
+    console.error(
+      "Project PDF popup elements not found."
+    );
+
+    return;
+
+  }
+
+
+  /*
+     Reset previous state
+  */
+
+  viewer.style.display = "none";
+
+  loading.style.display = "block";
+
+  error.style.display = "none";
+
+
+  /*
+     Create safe URL
+  */
+
+  const pdfUrl =
+    encodeURI(pdfFile);
+
+
+  /*
+     Direct PDF link
+  */
+
+  if (directLink) {
+
+    directLink.href =
+      pdfUrl;
+
+  }
+
+
+  /*
+     Open PDF inside iframe
+  */
+
+  viewer.src =
+    pdfUrl +
+    "#toolbar=0&navpanes=0&scrollbar=0";
+
+
+  /*
+     Show popup
+  */
 
   modal.style.display = "flex";
 
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
   lockScroll();
+
+
+  /*
+     Wait for PDF iframe
+  */
+
+  viewer.onload = function () {
+
+    loading.style.display = "none";
+
+    viewer.style.display = "block";
+
+  };
+
+
+  /*
+     PDF iframe error
+  */
+
+  viewer.onerror = function () {
+
+    loading.style.display = "none";
+
+    viewer.style.display = "none";
+
+    error.style.display = "block";
+
+  };
 
 }
 
 
+
+function closePdf() {
+
+
+  const modal =
+    document.getElementById("pdfModal");
+
+  const viewer =
+    document.getElementById("pdfViewer");
+
+  const loading =
+    document.getElementById("pdfLoading");
+
+  const error =
+    document.getElementById("pdfError");
+
+
+  if (!modal || !viewer) {
+
+    return;
+
+  }
+
+
+  modal.style.display = "none";
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  viewer.src = "";
+
+  viewer.style.display = "none";
+
+
+  if (loading) {
+
+    loading.style.display = "none";
+
+  }
+
+
+  if (error) {
+
+    error.style.display = "none";
+
+  }
+
+
+  unlockScroll();
+
+}
+
+
+
+/* =====================================================
+   PERSONAL FINANCE APP
+===================================================== */
+
+
+/*
+   IMPORTANT:
+   These filenames must exactly match
+   your actual image files.
+*/
+
+const phaseFiles = [
+
+  "PHASE 1.png",
+  "PHASE 2.png",
+  "PHASE 3.png",
+  "PHASE 4.png",
+  "PHASE 5.png",
+  "PHASE 6.png",
+  "PHASE 7.png"
+
+];
+
+
+let currentPhase = 1;
+
+const totalPhases =
+  phaseFiles.length;
+
+
+
+/* =====================================================
+   OPEN PHASES
+===================================================== */
+
+function openPhases() {
+
+
+  currentPhase = 1;
+
+
+  const modal =
+    document.getElementById("phaseModal");
+
+
+  if (!modal) {
+
+    console.error(
+      "Phase modal not found."
+    );
+
+    return;
+
+  }
+
+
+  modal.style.display = "flex";
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  lockScroll();
+
+
+  showPhase();
+
+}
+
+
+
+/* =====================================================
+   SHOW PHASE
+===================================================== */
+
 function showPhase() {
+
 
   const image =
     document.getElementById("phaseImage");
@@ -630,24 +1475,65 @@ function showPhase() {
   const nextBtn =
     document.getElementById("nextBtn");
 
+  const loading =
+    document.getElementById("phaseLoading");
 
-  if (!image) return;
+  const error =
+    document.getElementById("phaseError");
+
+
+  if (!image) {
+
+    return;
+
+  }
 
 
   /*
-     Make sure the image filename matches
-     your GitHub file exactly.
-
-     Example:
-     PHASE 1.png
-     PHASE 2.png
-     ...
-     PHASE 7.png
+     Reset
   */
 
-  image.src =
-    `PHASE ${currentPhase}.png`;
+  image.style.display = "none";
 
+
+  if (loading) {
+
+    loading.style.display =
+      "block";
+
+  }
+
+
+  if (error) {
+
+    error.style.display =
+      "none";
+
+  }
+
+
+  /*
+     Image filename
+  */
+
+  const imageFile =
+    phaseFiles[currentPhase - 1];
+
+
+  /*
+     Encode spaces correctly
+  */
+
+  const imageUrl =
+    encodeURI(imageFile);
+
+
+  image.src = imageUrl;
+
+
+  /*
+     Title
+  */
 
   if (title) {
 
@@ -657,6 +1543,10 @@ function showPhase() {
   }
 
 
+  /*
+     Number
+  */
+
   if (number) {
 
     number.textContent =
@@ -664,6 +1554,10 @@ function showPhase() {
 
   }
 
+
+  /*
+     Previous button
+  */
 
   if (previousBtn) {
 
@@ -673,6 +1567,10 @@ function showPhase() {
   }
 
 
+  /*
+     Next button
+  */
+
   if (nextBtn) {
 
     nextBtn.disabled =
@@ -680,14 +1578,74 @@ function showPhase() {
 
   }
 
+
+  /*
+     Image loaded
+  */
+
+  image.onload = function () {
+
+    if (loading) {
+
+      loading.style.display =
+        "none";
+
+    }
+
+    image.style.display =
+      "block";
+
+  };
+
+
+  /*
+     Image failed
+  */
+
+  image.onerror = function () {
+
+    if (loading) {
+
+      loading.style.display =
+        "none";
+
+    }
+
+
+    image.style.display =
+      "none";
+
+
+    if (error) {
+
+      error.style.display =
+        "block";
+
+    }
+
+
+    console.error(
+      "Image not found:",
+      imageFile
+    );
+
+  };
+
 }
 
 
-/* ---------- NEXT ---------- */
+
+/* =====================================================
+   NEXT PHASE
+===================================================== */
 
 function nextPhase() {
 
-  if (currentPhase < totalPhases) {
+
+  if (
+    currentPhase <
+    totalPhases
+  ) {
 
     currentPhase++;
 
@@ -698,11 +1656,18 @@ function nextPhase() {
 }
 
 
-/* ---------- PREVIOUS ---------- */
+
+/* =====================================================
+   PREVIOUS PHASE
+===================================================== */
 
 function previousPhase() {
 
-  if (currentPhase > 1) {
+
+  if (
+    currentPhase >
+    1
+  ) {
 
     currentPhase--;
 
@@ -713,144 +1678,244 @@ function previousPhase() {
 }
 
 
-/* ---------- CLOSE ---------- */
+
+/* =====================================================
+   CLOSE PHASES
+===================================================== */
 
 function closePhases() {
+
 
   const modal =
     document.getElementById("phaseModal");
 
-  if (!modal) return;
 
-  modal.style.display = "none";
+  if (!modal) {
+
+    return;
+
+  }
+
+
+  modal.style.display =
+    "none";
+
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
 
   unlockScroll();
 
 }
 
 
+
 /* =====================================================
-   APK DOWNLOAD MESSAGE
+   APK DOWNLOAD
 ===================================================== */
 
-function downloadAPK() {
+function downloadAPK(event) {
+
+
+  if (event) {
+
+    /*
+       Don't stop the browser's download.
+    */
+
+  }
+
 
   const message =
-    document.getElementById("downloadMessage");
-
-  if (!message) return;
-
-  message.style.display = "block";
+    document.getElementById(
+      "downloadMessage"
+    );
 
 
-  setTimeout(() => {
+  if (!message) {
 
-    message.style.display = "none";
+    return;
+
+  }
+
+
+  message.style.display =
+    "block";
+
+
+  setTimeout(function () {
+
+    message.style.display =
+      "none";
 
   }, 3000);
 
 }
 
 
+
 /* =====================================================
-   CLOSE POPUP WHEN CLICKING OUTSIDE
+   CLICK OUTSIDE POPUP
 ===================================================== */
 
-document.addEventListener("click", function(event) {
-
-  const resumeModal =
-    document.getElementById("resumeModal");
-
-  const pdfModal =
-    document.getElementById("pdfModal");
-
-  const phaseModal =
-    document.getElementById("phaseModal");
+document.addEventListener(
+  "click",
+  function (event) {
 
 
-  /*
-     Resume
-  */
+    const resumeModal =
+      document.getElementById(
+        "resumeModal"
+      );
 
-  if (event.target === resumeModal) {
 
-    closeResume();
+    const pdfModal =
+      document.getElementById(
+        "pdfModal"
+      );
+
+
+    const phaseModal =
+      document.getElementById(
+        "phaseModal"
+      );
+
+
+    /*
+       Resume
+    */
+
+    if (
+      event.target ===
+      resumeModal
+    ) {
+
+      closeResume();
+
+    }
+
+
+    /*
+       PDF
+    */
+
+    if (
+      event.target ===
+      pdfModal
+    ) {
+
+      closePdf();
+
+    }
+
+
+    /*
+       Personal Finance
+    */
+
+    if (
+      event.target ===
+      phaseModal
+    ) {
+
+      closePhases();
+
+    }
 
   }
+);
 
-
-  /*
-     Project PDF
-  */
-
-  if (event.target === pdfModal) {
-
-    closePdf();
-
-  }
-
-
-  /*
-     Personal Finance
-  */
-
-  if (event.target === phaseModal) {
-
-    closePhases();
-
-  }
-
-});
 
 
 /* =====================================================
    ESC KEY
 ===================================================== */
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener(
+  "keydown",
+  function (event) {
 
-  if (event.key === "Escape") {
 
-    closeResume();
-    closePdf();
-    closePhases();
+    if (
+      event.key ===
+      "Escape"
+    ) {
+
+      closeResume();
+
+      closePdf();
+
+      closePhases();
+
+    }
 
   }
+);
 
-});
 
 
 /* =====================================================
-   CLOSE MOBILE MENU AFTER CLICKING A LINK
+   CLOSE MOBILE MENU
 ===================================================== */
 
 if (nav) {
 
+
   const navItems =
     nav.querySelectorAll("a");
 
-  navItems.forEach(function(item) {
 
-    item.addEventListener("click", function() {
+  navItems.forEach(
+    function (item) {
 
-      nav.classList.remove("active");
 
-      if (toggle) {
-        toggle.classList.remove("open");
-      }
+      item.addEventListener(
+        "click",
+        function () {
 
-    });
 
-  });
+          nav.classList.remove(
+            "active"
+          );
+
+
+          if (toggle) {
+
+            toggle.classList.remove(
+              "open"
+            );
+
+          }
+
+        }
+      );
+
+    }
+  );
 
 }
 
+
 </script>
 
-<!-- FOOTER -->
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-  <p>© 2025 Madhuvanthi C E</p>
+
+  <p>
+    © 2026 Madhuvanthi C E
+  </p>
+
 </footer>
 
+
 </body>
+
 </html>
