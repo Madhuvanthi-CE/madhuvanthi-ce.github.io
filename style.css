@@ -350,6 +350,20 @@ body::after {
   margin-top: 20px;
 }
 
+/* =========================
+   INTRODUCTION
+========================= */
+
+.card p {
+  text-align: left;
+  line-height: 1.8;
+  margin: 12px 0;
+  max-width: 100%;
+}
+
+.card h2 {
+  margin-bottom: 25px;
+}
 
 /* =====================================================
    SKILLS
