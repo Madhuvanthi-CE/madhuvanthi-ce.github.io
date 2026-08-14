@@ -15,34 +15,23 @@
 
 html {
   scroll-behavior: smooth;
-  width: 100%;
 }
 
 body {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-
   background: linear-gradient(135deg, #0f0f0f, #121212);
-
   color: #eaeaea;
-
   line-height: 1.7;
-
   overflow-x: hidden;
 }
 
 
 /* =====================================================
-   BACKGROUND GLOW
+   BACKGROUND PURPLE GLOW
 ===================================================== */
 
 body::before,
 body::after {
-
   content: "";
-
   position: fixed;
 
   width: 600px;
@@ -72,11 +61,9 @@ body::after {
 }
 
 @keyframes floatGlow {
-
   to {
     transform: translate(60px, 60px);
   }
-
 }
 
 
@@ -85,7 +72,6 @@ body::after {
 ===================================================== */
 
 .navbar {
-
   position: fixed;
 
   top: 0;
@@ -101,26 +87,19 @@ body::after {
   backdrop-filter: blur(10px);
 
   display: flex;
-
   justify-content: space-between;
   align-items: center;
 
   z-index: 1000;
 }
 
-
 .logo {
-
   color: #fff;
-
   font-size: 1.7rem;
-
   font-weight: 600;
 }
 
-
 .navbar ul {
-
   display: flex;
 
   align-items: center;
@@ -130,23 +109,15 @@ body::after {
   gap: 30px;
 }
 
-
 .navbar a {
-
   color: #fff;
 
   text-decoration: none;
 
-  transition: color 0.3s ease;
+  transition: 0.3s ease;
 }
 
-
-/* IMPORTANT:
-   Purple only when hovering.
-*/
-
 .navbar a:hover {
-
   color: #9b5cff;
 }
 
@@ -156,7 +127,6 @@ body::after {
 ===================================================== */
 
 .hire-btn {
-
   background: linear-gradient(
     135deg,
     #9b5cff,
@@ -173,7 +143,6 @@ body::after {
 }
 
 .hire-btn:hover {
-
   transform: translateY(-2px);
 
   box-shadow:
@@ -186,7 +155,6 @@ body::after {
 ===================================================== */
 
 .menu-toggle {
-
   display: none;
 
   flex-direction: column;
@@ -197,15 +165,12 @@ body::after {
 }
 
 .menu-toggle span {
-
   width: 27px;
   height: 3px;
 
   background: #fff;
 
   border-radius: 5px;
-
-  transition: 0.3s;
 }
 
 
@@ -214,7 +179,6 @@ body::after {
 ===================================================== */
 
 .hero {
-
   width: 100%;
 
   min-height: 650px;
@@ -232,9 +196,7 @@ body::after {
   align-items: center;
 }
 
-
 .hero h1 {
-
   width: 100%;
 
   max-width: 1400px;
@@ -252,9 +214,7 @@ body::after {
   line-height: 1.2;
 }
 
-
 .hero p {
-
   margin-top: 20px;
 
   font-size: 1.1rem;
@@ -266,7 +226,6 @@ body::after {
 ===================================================== */
 
 .resume-btn {
-
   display: inline-block;
 
   margin-top: 30px;
@@ -287,19 +246,14 @@ body::after {
 
   font-weight: 500;
 
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  transition: 0.3s;
 }
 
-
 .resume-btn:hover {
-
   transform: translateY(-4px);
 
   box-shadow:
-    0 8px 25px
-    rgba(
+    0 8px 25px rgba(
       155,
       92,
       255,
@@ -313,7 +267,6 @@ body::after {
 ===================================================== */
 
 .card {
-
   position: relative;
 
   width: 90%;
@@ -348,13 +301,16 @@ body::after {
     box-shadow 0.4s ease;
 
   overflow: hidden;
+
+  box-shadow:
+    0 0 18px
+      rgba(155, 92, 255, 0.25),
+
+    0 0 35px
+      rgba(155, 92, 255, 0.15);
 }
 
-
-/* Glow behind card */
-
 .card::before {
-
   content: "";
 
   position: absolute;
@@ -378,55 +334,19 @@ body::after {
   transition: opacity 0.4s ease;
 }
 
-
-/* IMPORTANT:
-   Card moves ONLY when hovering
-*/
-
 .card:hover {
-
   transform: translateY(-6px);
-
-  box-shadow:
-    0 0 18px
-    rgba(155, 92, 255, 0.25),
-
-    0 0 35px
-    rgba(155, 92, 255, 0.15);
 }
-
 
 .card:hover::before {
-
   opacity: 0.35;
-
-  animation:
-    glowPulse
-    3s infinite
-    alternate ease-in-out;
 }
-
-
-@keyframes glowPulse {
-
-  from {
-    opacity: 0.15;
-  }
-
-  to {
-    opacity: 0.35;
-  }
-
-}
-
 
 .card h2 {
-
   margin-bottom: 20px;
 }
 
 .card h3 {
-
   margin-top: 20px;
 }
 
@@ -436,7 +356,6 @@ body::after {
 ===================================================== */
 
 .skills {
-
   display: flex;
 
   flex-wrap: wrap;
@@ -446,9 +365,7 @@ body::after {
   margin-top: 12px;
 }
 
-
 .skills span {
-
   padding: 10px 20px;
 
   border-radius: 25px;
@@ -458,9 +375,7 @@ body::after {
   transition: 0.3s;
 }
 
-
 .skills span:hover {
-
   background: #9b5cff;
 
   color: #000;
@@ -474,21 +389,16 @@ body::after {
 ===================================================== */
 
 .project {
-
   width: 100%;
 
   margin-bottom: 30px;
 }
 
-
 .project h3 {
-
   margin-bottom: 5px;
 }
 
-
 .project p {
-
   margin-bottom: 5px;
 }
 
@@ -498,7 +408,6 @@ body::after {
 ===================================================== */
 
 .project-btn {
-
   display: inline-block;
 
   margin-top: 12px;
@@ -537,9 +446,7 @@ body::after {
   transition: 0.3s;
 }
 
-
 .project-btn:hover {
-
   background: #9b5cff;
 
   color: #000 !important;
@@ -558,11 +465,10 @@ body::after {
 
 
 /* =====================================================
-   GENERAL CARD LINKS
+   GENERAL LINKS
 ===================================================== */
 
 .card a {
-
   color: #9b5cff;
 
   text-decoration: none;
@@ -570,9 +476,7 @@ body::after {
   font-weight: 500;
 }
 
-
 .card a:hover {
-
   color: #c77dff;
 }
 
@@ -582,26 +486,15 @@ body::after {
 ===================================================== */
 
 .cert-list {
-
   padding-left: 20px;
 }
 
-
 .cert-list li {
-
   margin: 15px 0;
 }
 
-
 .cert-list a {
-
   color: #9b5cff;
-}
-
-
-.cert-list a:hover {
-
-  color: #c77dff;
 }
 
 
@@ -610,7 +503,6 @@ body::after {
 ===================================================== */
 
 .contact-links {
-
   display: flex;
 
   flex-wrap: wrap;
@@ -620,9 +512,7 @@ body::after {
   margin-top: 20px;
 }
 
-
 .contact-links a {
-
   padding: 10px 18px;
 
   border: 1px solid
@@ -642,9 +532,7 @@ body::after {
   transition: 0.3s;
 }
 
-
 .contact-links a:hover {
-
   background: #9b5cff;
 
   color: #000;
@@ -656,7 +544,6 @@ body::after {
 ===================================================== */
 
 footer {
-
   text-align: center;
 
   padding: 30px;
@@ -670,62 +557,43 @@ footer {
 ===================================================== */
 
 .fade-in {
-
   opacity: 0;
 
   animation:
-    fadeIn 1s
-    forwards;
+    fadeIn 1s forwards;
 }
 
-
 .delay {
-
   animation-delay: 0.3s;
 }
 
-
 .delay2 {
-
   animation-delay: 0.6s;
 }
 
-
 @keyframes fadeIn {
-
   to {
     opacity: 1;
   }
-
 }
-
 
 .slide-up {
-
   animation:
-    revealUp 1s
-    ease forwards;
+    revealUp 1s ease forwards;
 }
 
-
 @keyframes revealUp {
-
   from {
-
     opacity: 0;
 
-    transform:
-      translateY(40px);
+    transform: translateY(40px);
   }
 
   to {
-
     opacity: 1;
 
-    transform:
-      translateY(0);
+    transform: translateY(0);
   }
-
 }
 
 
@@ -734,7 +602,6 @@ footer {
 ===================================================== */
 
 .resume-modal {
-
   display: none;
 
   position: fixed;
@@ -744,8 +611,12 @@ footer {
   width: 100vw;
   height: 100vh;
 
-  background:
-    rgba(0, 0, 0, 0.88);
+  background: rgba(
+    0,
+    0,
+    0,
+    0.90
+  );
 
   z-index: 99999;
 
@@ -755,11 +626,7 @@ footer {
   padding: 20px;
 }
 
-
-/* Resume popup box */
-
 .resume-container {
-
   position: relative;
 
   width: min(
@@ -771,7 +638,7 @@ footer {
 
   background: #222;
 
-  border-radius: 14px;
+  border-radius: 15px;
 
   overflow: hidden;
 
@@ -785,11 +652,7 @@ footer {
     );
 }
 
-
-/* Resume PDF */
-
 .resume-container iframe {
-
   display: block;
 
   width: 100%;
@@ -798,54 +661,6 @@ footer {
   border: none;
 
   background: white;
-}
-
-
-/* =====================================================
-   RESUME CLOSE BUTTON
-===================================================== */
-
-.close-resume {
-
-  position: absolute;
-
-  top: 10px;
-  right: 10px;
-
-  width: 44px;
-  height: 44px;
-
-  border: none;
-
-  border-radius: 50%;
-
-  background: #000;
-
-  color: #fff;
-
-  font-size: 28px;
-
-  font-weight: bold;
-
-  cursor: pointer;
-
-  z-index: 100001;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  transition: 0.3s;
-}
-
-
-.close-resume:hover {
-
-  background: #ff3333;
-
-  transform: rotate(90deg);
 }
 
 
@@ -854,7 +669,6 @@ footer {
 ===================================================== */
 
 .project-modal {
-
   display: none;
 
   position: fixed;
@@ -864,23 +678,22 @@ footer {
   width: 100vw;
   height: 100vh;
 
-  background:
-    rgba(0, 0, 0, 0.90);
+  background: rgba(
+    0,
+    0,
+    0,
+    0.90
+  );
 
   z-index: 100000;
 
   align-items: center;
-
   justify-content: center;
 
   padding: 20px;
 }
 
-
-/* PDF popup container */
-
 .project-modal-container {
-
   position: relative;
 
   width: min(
@@ -906,11 +719,7 @@ footer {
     );
 }
 
-
-/* PDF iframe */
-
 .project-modal-container iframe {
-
   display: block;
 
   width: 100%;
@@ -923,11 +732,11 @@ footer {
 
 
 /* =====================================================
-   PROJECT POPUP CLOSE BUTTON
+   CLOSE BUTTON
 ===================================================== */
 
+.close-resume,
 .modal-close {
-
   position: absolute;
 
   top: 10px;
@@ -961,9 +770,8 @@ footer {
   transition: 0.3s;
 }
 
-
+.close-resume:hover,
 .modal-close:hover {
-
   background: #ff3333;
 
   transform: rotate(90deg);
@@ -971,93 +779,10 @@ footer {
 
 
 /* =====================================================
-   IMAGE POPUP
+   PERSONAL FINANCE PHASE POPUP
 ===================================================== */
-
-.image-modal-container {
-
-  position: relative;
-
-  width: min(
-    1100px,
-    95vw
-  );
-
-  height: 92vh;
-
-  background: #111;
-
-  border-radius: 15px;
-
-  padding: 45px 30px 30px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 0 40px
-    rgba(
-      155,
-      92,
-      255,
-      0.35
-    );
-}
-
-
-#projectImage {
-
-  display: block;
-
-  max-width: 100%;
-
-  max-height: 100%;
-
-  width: auto;
-
-  height: auto;
-
-  object-fit: contain;
-
-  border-radius: 10px;
-}
-
-
-/* =====================================================
-   PHASE POPUP
-===================================================== */
-
-.phase-modal {
-
-  display: none;
-
-  position: fixed;
-
-  inset: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  background:
-    rgba(0, 0, 0, 0.90);
-
-  z-index: 99997;
-
-  justify-content: center;
-
-  align-items: center;
-
-  padding: 20px;
-}
-
 
 .phase-container {
-
   position: relative;
 
   width: min(
@@ -1071,8 +796,7 @@ footer {
 
   border-radius: 15px;
 
-  padding:
-    50px 25px 25px;
+  padding: 50px 25px 25px;
 
   display: flex;
 
@@ -1094,11 +818,7 @@ footer {
     );
 }
 
-
-/* Phase title */
-
 .phase-container h2 {
-
   margin: 0 0 15px;
 
   color: #9b5cff;
@@ -1108,19 +828,13 @@ footer {
   font-size: 1.4rem;
 }
 
-
-/* Phase image */
-
 #phaseImage {
-
   display: block;
 
   width: auto;
-
   height: auto;
 
   max-width: 100%;
-
   max-height: 68vh;
 
   object-fit: contain;
@@ -1128,13 +842,7 @@ footer {
   border-radius: 10px;
 }
 
-
-/* =====================================================
-   PHASE CONTROLS
-===================================================== */
-
 .phase-controls {
-
   display: flex;
 
   align-items: center;
@@ -1146,9 +854,7 @@ footer {
   margin-top: 18px;
 }
 
-
 .phase-controls button {
-
   padding: 10px 20px;
 
   border: 1px solid
@@ -1161,44 +867,33 @@ footer {
 
   border-radius: 25px;
 
-  background:
-    rgba(
-      155,
-      92,
-      255,
-      0.15
-    );
+  background: rgba(
+    155,
+    92,
+    255,
+    0.15
+  );
 
   color: #9b5cff;
 
   cursor: pointer;
 
   font-size: 14px;
-
-  transition: 0.3s;
 }
 
-
 .phase-controls button:hover {
-
   background: #9b5cff;
 
   color: #000;
 }
 
-
 .phase-controls button:disabled {
-
   opacity: 0.3;
 
   cursor: not-allowed;
-
-  transform: none;
 }
 
-
 #phaseNumber {
-
   color: #fff;
 
   font-weight: 600;
@@ -1214,7 +909,6 @@ footer {
 ===================================================== */
 
 .download-message {
-
   display: none;
 
   position: fixed;
@@ -1253,51 +947,30 @@ footer {
 }
 
 
-.download-message i {
-
-  color: #6cff8d;
-
-  margin-right: 8px;
-}
-
-
 /* =====================================================
-   MOBILE - 768px
+   MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
 
-
-  /* ---------- NAVBAR ---------- */
-
   .navbar {
-
-    width: 100%;
-
     height: 65px;
 
     padding: 0 20px;
   }
 
-
   .logo {
-
     font-size: 1.2rem;
   }
 
-
   .menu-toggle {
-
     display: flex;
   }
 
-
   .navbar ul {
-
     position: absolute;
 
     top: 65px;
-
     right: 15px;
 
     width: 210px;
@@ -1312,8 +985,7 @@ footer {
         0.97
       );
 
-    backdrop-filter:
-      blur(12px);
+    backdrop-filter: blur(12px);
 
     border-radius: 15px;
 
@@ -1334,140 +1006,93 @@ footer {
     gap: 18px;
   }
 
-
   .navbar ul.active {
-
     display: flex;
   }
 
-
   .navbar ul li {
-
     text-align: center;
   }
 
 
-  /* ---------- HERO ---------- */
+  /* HERO */
 
   .hero {
-
-    width: 100%;
-
     min-height: auto;
 
     padding:
-      130px 20px
-      80px;
+      130px 20px 80px;
   }
 
-
   .hero h1 {
-
-    width: 100%;
-
     font-size: 2rem;
 
     line-height: 1.3;
   }
 
-
   .hero p {
-
     font-size: 0.9rem;
 
     margin-top: 15px;
   }
 
-
   .resume-btn {
-
-    padding:
-      12px 25px;
+    padding: 12px 25px;
 
     font-size: 14px;
   }
 
 
-  /* ---------- CARDS ---------- */
+  /* CARDS */
 
   .card {
-
-    width:
-      calc(100% - 30px);
+    width: calc(100% - 30px);
 
     max-width: none;
 
-    margin:
-      35px auto;
+    margin: 35px auto;
 
-    padding:
-      25px 20px;
+    padding: 25px 20px;
 
     border-radius: 18px;
   }
 
-
   .card h2 {
-
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
-
 
   .card h3 {
-
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
-
   .card p {
-
     font-size: 0.9rem;
   }
 
 
-  /* ---------- SKILLS ---------- */
+  /* SKILLS */
 
   .skills {
-
     gap: 8px;
   }
 
-
   .skills span {
-
-    padding:
-      8px 13px;
+    padding: 8px 13px;
 
     font-size: 0.8rem;
   }
 
 
-  /* ---------- PROJECTS ---------- */
+  /* PROJECT */
 
   .project {
-
     width: 100%;
 
     margin-bottom: 30px;
   }
 
-
-  .project h3 {
-
-    font-size: 1.05rem;
-  }
-
-
-  .project p {
-
-    font-size: 14px;
-  }
-
-
   .project-btn {
-
-    padding:
-      8px 15px;
+    padding: 8px 15px;
 
     font-size: 13px;
 
@@ -1477,58 +1102,41 @@ footer {
   }
 
 
-  /* ---------- CONTACT ---------- */
+  /* CONTACT */
 
   .contact-links {
-
     flex-direction: column;
 
     gap: 12px;
   }
 
-
   .contact-links a {
-
     text-align: center;
   }
 
 
-  /* =================================================
-     RESUME POPUP MOBILE
-  ================================================= */
+  /* RESUME POPUP */
 
   .resume-modal {
-
-    padding: 10px;
+    padding: 8px;
   }
 
-
   .resume-container {
-
     width: 96vw;
 
     height: 92vh;
-
-    max-width: none;
-
-    max-height: none;
 
     border-radius: 10px;
   }
 
 
-  /* =================================================
-     PROJECT PDF POPUP MOBILE
-  ================================================= */
+  /* PDF POPUP */
 
   .project-modal {
-
-    padding: 10px;
+    padding: 8px;
   }
 
-
   .project-modal-container {
-
     width: 96vw;
 
     height: 90vh;
@@ -1537,43 +1145,9 @@ footer {
   }
 
 
-  /* =================================================
-     IMAGE POPUP MOBILE
-  ================================================= */
-
-  .image-modal-container {
-
-    width: 96vw;
-
-    height: 85vh;
-
-    padding:
-      45px 15px 15px;
-
-    border-radius: 10px;
-  }
-
-
-  #projectImage {
-
-    max-width: 100%;
-
-    max-height: 75vh;
-  }
-
-
-  /* =================================================
-     PHASE POPUP MOBILE
-  ================================================= */
-
-  .phase-modal {
-
-    padding: 8px;
-  }
-
+  /* PHASE POPUP */
 
   .phase-container {
-
     width: 96vw;
 
     height: 90vh;
@@ -1584,65 +1158,47 @@ footer {
     border-radius: 10px;
   }
 
-
-  .phase-container h2 {
-
-    font-size: 1rem;
-
-    margin-bottom: 12px;
-  }
-
-
   #phaseImage {
-
     max-width: 100%;
 
     max-height: 68vh;
   }
 
+  .phase-container h2 {
+    font-size: 1rem;
+  }
 
   .phase-controls {
-
     gap: 10px;
 
     margin-top: 12px;
   }
 
-
   .phase-controls button {
-
-    padding:
-      8px 12px;
+    padding: 8px 12px;
 
     font-size: 12px;
   }
 
 
-  /* =================================================
-     CLOSE BUTTON MOBILE
-  ================================================= */
+  /* CLOSE BUTTON */
 
   .modal-close,
   .close-resume {
-
     width: 40px;
 
     height: 40px;
 
     top: 8px;
-
     right: 8px;
 
     font-size: 24px;
   }
 
 
-  /* =================================================
-     DOWNLOAD MESSAGE
-  ================================================= */
+  /* DOWNLOAD */
 
   .download-message {
-
     left: 15px;
 
     right: 15px;
@@ -1653,89 +1209,44 @@ footer {
 
     font-size: 13px;
   }
-
 }
 
 
 /* =====================================================
-   VERY SMALL PHONES - 480px
+   VERY SMALL PHONE
 ===================================================== */
 
 @media (max-width: 480px) {
 
-
   .logo {
-
     font-size: 1rem;
   }
 
-
   .hero h1 {
-
     font-size: 1.65rem;
   }
 
-
-  .hero p {
-
-    font-size: 0.85rem;
-  }
-
-
   .card {
+    width: calc(100% - 20px);
 
-    width:
-      calc(100% - 20px);
-
-    padding:
-      22px 16px;
+    padding: 22px 16px;
   }
-
-
-  .project-btn {
-
-    display: inline-block;
-
-    margin-bottom: 8px;
-  }
-
-
-  .phase-controls {
-
-    gap: 6px;
-  }
-
-
-  .phase-controls button {
-
-    padding:
-      7px 9px;
-
-    font-size: 11px;
-  }
-
 
   .resume-container {
-
     width: 98vw;
 
     height: 94vh;
   }
-
 
   .project-modal-container {
-
     width: 98vw;
 
     height: 94vh;
   }
-
 
   .phase-container {
-
     width: 98vw;
 
     height: 94vh;
   }
-
 }
